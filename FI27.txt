@@ -1,0 +1,56 @@
+19.06.2022-30.06.2022 M19W Professionell Texte erstellen mit MS Word 2019
+03.07.2022-14.07.2022 M19E Professionelle Tabellenkalkulation mit MS Excel 
+17.07.2022-28.07.2022 VWLO Volkswirtschaft, Betriebswirtschaft und Organisationslehre
+31.07.2022-04.08.2022 KORE Kosten- und Leistungsrechnung
+14.08.2022-25.08.2022 WIRE Wirtschafts- und Arbeitsrecht
+28.08.2022-01.09.2022 BEVT Grundlagen der Beschaffungs- und Absatzwirtschaft
+04.09.2022-08.09.2022 ESIT Erfolgreich Softskills im IT-Bereich einsetzen 
+11.09.2022-22.09.2022 DBET Digitale Basis erfolgreicher 
+25.09.2022-06.10.2022 GRIT Grundlagen Informationstechnologie 
+09.10.2022-13.10.2022 GRHW Grundlagen Hardware 
+16.10.2022-27.10.2022 NETE Netzwerktechnologien und Netzwerkprotokolle verstehen
+06.11.2022-10.11.2022 GRDS Grundlagen Datensicherheit und Datenschutz
+13.11.2022-24.11.2022 W19I MS Windows Server 2019 - Installation und Konfiguration
+27.11.2022-08.12.2022 W19A MS Windows Server 2019 - Administration
+11.12.2022-15.12.2022 GRTW Grundlagen Telekommunikation/WAN-Technologien 
+18.12.2022-22.12.2022 GPMM Grundlagen Projektmanagement 
+08.01.2023-19.01.2023 GRDB Relationale Datenbanken
+22.01.2023-02.02.2023 TSQL Professioneller Einstieg in Microsoft T-SQL
+05.02.2023-09.02.2023 RDBE RELATIONALE DB-ANWENDUNGEN ENTWERFEN (SQL)
+12.02.2023-23.02.2023 GRPR Grundlagen Programmierung 
+26.02.2023-08.03.2023 JAV1 Objektorientiert programmieren mit Java (1)
+11.03.2023-22.03.2023 SEOS Software-Engineering (1): Objektorientierte Soft
+25.03.2023-28.03.2023 JAV2 Objektorientiert programmieren mit Java (2)
+08.04.2023-12.04.2023 JAV2 Objektorientiert programmieren mit Java (2)
+15.04.2023-26.04.2023 CSRK Cisco-Switches und - Router konfigurieren
+29.04.2023-10.05.2023 RSIT Routing-, Switching-Technologien und IP-Telephonie 
+13.05.2023-17.05.2023 LGRS Linux - Grundlagen des Betriebssystems 
+27.05.2023-31.05.2023 LGRS Linux - Grundlagen des Betriebssystems 
+03.06.2023-14.06.2023 LISY Linux - Systemverwaltung 
+17.06.2023-28.06.2023 LTCP Linux - TCP/IP-Netze einrichten 
+01.07.2023-12.07.2023 LIKK Linux - Intranets implementieren und administrieren
+15.07.2023-26.07.2023 LIFP Linux - Firewalls und Proxyserver einrichten
+12.08.2023-16.08.2023 FHTN Fallstudie: Heterogene Netze implementieren
+19.08.2023-23.08.2023 PRUK Pruefungsvorbereitung
+26.08.2023-30.08.2023 PMD1 IT-Projekte
+02.09.2023-13.09.2023 PMD2 IT-Projekte steuern  
+16.09.2023-27.09.2023 BK01 BETRIEBSPRAKTIKUM
+30.09.2023-11.10.2023 BK02 BETRIEBSPRAKTIKUM
+14.10.2023-25.10.2023 BK03 BETRIEBSPRAKTIKUM
+28.10.2023-08.11.2023 BK04 BETRIEBSPRAKTIKUM
+11.11.2023-22.11.2023 BK05 BETRIEBSPRAKTIKUM
+25.11.2023-06.12.2023 BK06 BETRIEBSPRAKTIKUM
+09.12.2023-20.12.2023 BK07 BETRIEBSPRAKTIKUM
+13.01.2024-24.01.2024 BK08 BETRIEBSPRAKTIKUM
+27.01.2024-31.01.2024 BK09 BETRIEBSPRAKTIKUM
+10.02.2024-21.02.2024 BK10 BETRIEBSPRAKTIKUM
+24.02.2024-07.03.2024 BK11 BETRIEBSPRAKTIKUM
+10.03.2024-21.03.2024 BK12 BETRIEBSPRAKTIKUM
+24.03.2024-28.03.2024 BK13 BETRIEBSPRAKTIKUM
+31.03.2024-17.04.2024 PRUK Pruefungsvorbereitung
+28.04.2024-09.05.2024 BK14 BETRIEBSPRAKTIKUM
+12.05.2024-23.05.2024 BK15 BETRIEBSPRAKTIKUM
+26.05.2024-28.05.2024 BK16 BETRIEBSPRAKTIKUM
+02.06.2024-13.06.2024 BK17 BETRIEBSPRAKTIKUM
+16.06.2024-18.06.2024 BK18 BETRIEBSPRAKTIKUM
+

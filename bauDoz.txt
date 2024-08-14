@@ -1,0 +1,53 @@
+M19W;Professionell Texte erstellen mit MS Word 2019;8
+M19E;Professionelle Tabellenkalkulation mit MS Excel;8
+VWLO;Volkswirtschaft, Betriebswirtschaft und Organisationslehre;2
+KORE;Kosten- und Leistungsrechnung;2
+WIRE;Wirtschafts- und Arbeitsrecht;2
+BEVT;Grundlagen der Beschaffungs- und Absatzwirtschaft;5
+ESIT;Erfolgreich Softskills im IT-Bereich einsetzen;2
+DBET;Digitale Basis erfolgreicher;1
+GRIT;Grundlagen Informationstechnologie;7
+GRHW;Grundlagen Hardware;7
+NETE;Netzwerktechnologien und Netzwerkprotokolle verstehen;5
+GRDS;Grundlagen Datensicherheit und Datenschutz;5
+W19I;MS Windows Server 2019 - Installation und Konfiguration;5
+W19A;MS Windows Server 2019 - Administration;5
+GRTW;Grundlagen Telekommunikation/WAN-Technologien;1
+GPMM;Grundlagen Projektmanagement;4
+GRDB;Relationale Datenbanken;6
+TSQL;Professioneller Einstieg in Microsoft T-SQL;0
+RDBE;RELATIONALE DB-ANWENDUNGEN ENTWERFEN (SQL);0
+GRPR;Grundlagen Programmierung;0
+JAV1;Objektorientiert programmieren mit Java (1);0
+SEOS;Software-Engineering (1): Objektorientierte Soft;0
+JAV2;Objektorientiert programmieren mit Java (2);0
+CSRK;Cisco-Switches und - Router konfigurieren;1
+RSIT;Routing-, Switching-Technologien und IP-Telephonie;3
+LGRS;Linux - Grundlagen des Betriebssystems;3
+LISY;Linux - Systemverwaltung;3
+LTCP;Linux - TCP/IP-Netze einrichten;3
+LIKK;Linux - Intranets implementieren und administrieren;5
+LIFP;Linux - Firewalls und Proxyserver einrichten;5
+FHTN;Fallstudie: Heterogene Netze implementieren;5
+PMD1;IT-Projekte;-1
+PMD2;IT-Projekte steuern;-1
+BK01;BETRIEBSPRAKTIKUM;-1
+BK02;BETRIEBSPRAKTIKUM;-1
+BK03;BETRIEBSPRAKTIKUM;-1
+BK04;BETRIEBSPRAKTIKUM;-1
+BK05;BETRIEBSPRAKTIKUM;-1
+BK06;BETRIEBSPRAKTIKUM;-1
+BK07;BETRIEBSPRAKTIKUM;-1
+BK08;BETRIEBSPRAKTIKUM;-1
+BK09;BETRIEBSPRAKTIKUM;-1
+BK10;BETRIEBSPRAKTIKUM;-1
+BK11;BETRIEBSPRAKTIKUM;-1
+BK12;BETRIEBSPRAKTIKUM;-1
+BK13;BETRIEBSPRAKTIKUM;-1
+PRUK;Pruefungsvorbereitung;4
+BK14;BETRIEBSPRAKTIKUM;-1
+BK15;BETRIEBSPRAKTIKUM;-1
+BK16;BETRIEBSPRAKTIKUM;-1
+BK17;BETRIEBSPRAKTIKUM;-1
+BK18;BETRIEBSPRAKTIKUM;-1
+

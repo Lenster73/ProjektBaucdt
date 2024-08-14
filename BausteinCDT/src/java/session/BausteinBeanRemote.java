@@ -1,0 +1,63 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/J2EE/EJB30/SessionLocal.java to edit this template
+ */
+package session;
+
+import entity.Baustein;
+import entity.Dozent;
+import entity.Klassen;
+import entity.Teilnehmer;
+
+import entity.Termine;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import javax.ejb.Remote;
+
+/**
+ *
+ * @author EWorster
+ */
+@Remote
+public interface BausteinBeanRemote {
+
+    public List<Termine> datAus();
+    public List<Klassen> getKls();
+    public List<Baustein> getBau();
+    public List<Teilnehmer> getTN();
+    public Termine getEinBau(String datid);
+    public void addDozent(Dozent doz);
+     public void addTnKls(String kls, String nname, String vname, String geb );
+
+    public List<String> addDatum(List<String> alltxt);
+    public void tnAusFileHinzu(String fname, String kls);
+
+    public void addDatumBauDB(List<String> datum, String fname);
+    public void ersetzDatumDB(String klass, String modul, String startDat, String endeDat);
+//    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat);
+
+    public void addDatumBauManyDB(List<String> datum, String fname);
+
+    public void addDatumDB(List<Termine> datList, String fname);
+
+//    public void addBaustein(Baustein bau);
+
+    public List<String> txtBauDozAus(String fName);
+
+    public List<String> txtBauAus(String fName);
+
+    public List<String> txtDozAus(String fName);
+
+    public List<String> txtDatModAus(String fname);
+
+    public void addBau(Set<Baustein> bauSet);
+
+    public void addKl(List<Klassen> klList);
+
+    public void addDoz(List<Dozent> dozList);
+
+    public void addBauDB(Set<Baustein> bauSet);
+    public List<Termine> getDatBau(String userDat);
+}

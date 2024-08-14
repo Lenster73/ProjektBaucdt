@@ -1,0 +1,128 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.zagol {
+    text-align:  center;
+    font-size: 24px;
+}
+div {
+    margin: auto;
+
+}
+
+form {
+    align-content: center;
+}
+table {
+    width: 800px;
+    align-content: center
+}
+.selGross{
+    width: 100%;
+    height: 30px;
+}
+.txtZur{
+    text-align:  left;
+    font-size: 16px;
+    color: #212244;
+}
+.tabKlein{
+    width: 500px;
+    align-content: center;
+}
+.txtBuch{
+    font-size: 20px;
+    color: #212244;
+}
+
+.txtPlan{
+    width: 15%;
+    height: 10px ;
+    font-size: 14px;
+    color: #212244;
+}
+
+.txtPlan2{
+    width: 40%;
+    height: 10px ;
+    font-size: 14px;
+    color: #212244;
+}
+.logo{
+    align-self: center;
+    width: 250px;
+}
+.txtPlanLine{
+    height: 1px ;
+    color: #C7EDCF;
+}
+
+.dateiGross{
+     width: 100%;
+    height: 30px;
+}
+.inpBTN{
+    background-color: transparent;
+    border: 0px;
+    font-size: 16px;
+    border-color: transparent;
+}
+th {
+    width: 200px;
+    text-align:left;
+    height: 10px;
+    padding: 5px;
+    border: 5px;
+    color:#000f1d;
+}
+td {
+    width: 200px;
+    height: 60px ;
+    padding: 5px;
+
+}
+.btn{
+    align-self:  center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color:  #2EAA45;
+    border-color: #BAFFC2;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border: 5px;
+    border-radius: 2px;
+}
+button {
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color:  #2EAA45;
+    border-color: #BAFFC2;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border: 5px;
+    border-radius: 2px;
+}
+/* mouse over link */
+button:hover {
+    font-size: 14px;
+    color:#000f1d;
+    background-color:#C7EDCF;
+    border-color: #C7EDCF;
+    border: 5px;
+    border-radius: 2px;
+}
+
+/* selected link */
+button:active {
+    font-size: 16px;
+    background-color: #FF9900;
+    border-radius: 2px;
+}
