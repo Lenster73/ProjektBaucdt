@@ -24,15 +24,17 @@
                     String klass = "";
                 %>
         <div>
+            <br>
             <p class="zagol">Teilnehmern fuer eine Klasse anzeigen</p>
 
             <form action="KlsTNAnzeigen.jsp" method="post">
+                
                 <table class="tabKlein">
-                    <tr>
-                        <td  class="txtBuch">Waelen Sie bitte eine Klasse: <br>
+                    <tr class="txtZur" >
+                        <td >Waelen Sie bitte eine Klasse: <br>
                             <!--<input type="text" name="id" id="id" required>-->
                         </td>
-                        <td>
+                        <td >
                             <label for="kls" class="txtBuch"></label>
                             <select id="id" name="id" class="selGross">
 

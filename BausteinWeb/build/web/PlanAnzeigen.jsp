@@ -44,7 +44,7 @@
                 <%} else {%>
             <p class="zagol">Module für Klasse <%=klsid%></p>
             <table >
-                <tr class="txtBuch">
+                <tr class="txtZur">
                     <th>Start</th>
                     <th>Ende</th>
 

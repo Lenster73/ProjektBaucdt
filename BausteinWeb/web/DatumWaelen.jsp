@@ -21,15 +21,16 @@
         <div>
 
             <form action="DatumBauAnzeigen.jsp" method="post">
+                <br>
                 <p class="zagol">Alle Module fuer den Tad</p>
                 <table class="tabKlein">
-                    <tr>
-                        <th colspan="2"><label class="txtBuch">Geben Sie bitte ein Datum ein:</label> <p></th>
+                    <tr class="txtZur">
+                        <th colspan="2"><label >Geben Sie bitte ein Datum ein:</label> <p></th>
                     </tr>
-                    <tr>
+                    <tr class="txtZur">
                   
                         <td colspan="2">
-                            <label for="dat" class="txtBuch">Datum waelen:</label>
+                            <label for="dat" >Datum waelen:</label>
                             <input type="date" name="dat" id="dat" class="selGross"><br><br>
                         </td>
                        

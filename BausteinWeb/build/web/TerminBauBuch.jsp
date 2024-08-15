@@ -33,14 +33,15 @@
 
 
             <form action="TerminBauUpload.jsp" method="post">
+                <br>
                 <p class="zagol">Termin Buchen</p>
                 <table class="tabKlein">
-                    <tr>
-                        <th colspan="2"><label class="txtBuch">Geben Sie bitte ein:</label> <p></th>
+                    <tr class="txtZur">
+                        <th colspan="2"><label >Geben Sie bitte ein:</label> </th>
                     </tr>
                     <tr>
                         <td>
-                            <label for="kls" class="txtBuch">Klasse:</label>
+                            <label for="kls" class="txtZur">Klasse:</label>
                             <select id="kls" name="kls" class="selGross">
 
                                 <% for (int i = 0; i < klsList.size(); i++) {%>
@@ -56,7 +57,7 @@
                             </select><br>
                         </td>
                         <td>
-                            <label for="modul" class="txtBuch">Modul:</label>
+                            <label for="modul" class="txtZur">Modul:</label>
                             <select id="modul" name="modul" class="selGross">
 
                                 <% for (int i = 0; i < bauList.size(); i++) {%>
@@ -76,11 +77,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="startD" class="txtBuch">Start Date:</label>
+                            <label for="startD" class="txtZur">Start Date:</label>
                             <input type="date" name="startD" id="startD" class="selGross"><br><br>
                         </td>
                         <td>
-                            <label for="endeD" class="txtBuch">End Date:</label>
+                            <label for="endeD" class="txtZur">End Date:</label>
                             <input type="date" name="endeD" id="endeD" class="selGross"><br><br>
                         </td>
                     </tr>

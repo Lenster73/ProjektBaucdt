@@ -38,9 +38,10 @@
             %>
             <p class="txtBuchCenter">Am <%=useDatCool %> <br>gibt es keine Module .<br><br>Wählen Sie bitte andere Datum.</p>
             <%} else{%>
+            
             <p class="txtBuch"> Am <%=useDatCool %> haben wir folgende Module:<p>
                 <table >
-                <tr class="txtBuch">
+                <tr class="txtZur">
                     <th>Modul</th> 
                     <th>Modulbeschreibung</th> 
                      <th>Klasse</th> 

@@ -48,7 +48,7 @@
             <%} else{%>
             <p class="zagol">Teilnehmern für die Klasse <%=klsid%></p>
             <table >
-                <tr class="txtBuch">
+                <tr class="txtZur">
                     <th>Nachname</th>
                     <th>Vorname</th>
                     <th>Geb. Datum</th>  

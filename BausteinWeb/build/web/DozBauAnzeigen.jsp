@@ -23,9 +23,10 @@
                 BeanConnector beanCon = new BeanConnector();
                 List<Baustein> bauList = beanCon.invokeBean().getBau();
             %>
+            <br>
             <p class="zagol">Alle Module im Institut:</p>
             <table >
-                <tr class="txtBuch">
+                <tr class="txtZur">
                     <th>Modul</th> 
                     <th>Modulbeschreibung</th>  
                     <th>Dozent</th>

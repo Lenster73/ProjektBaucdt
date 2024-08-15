@@ -15,18 +15,20 @@
     <body>
         <div ><a href="Home.jsp"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
         <div>
-            <p class="zagol">Datei waehlen</p>
-            <form action="DateiUpload.jsp" method="post">
+            
+            
+            <form action="DateiUpload.jsp" method="post"><br>
+               <p class="zagol">Datei waehlen</p>
                 <table class="tabKlein">
-                    <tr>
-                        <th colspan="2"><label class="txtBuch">Wählen Sie eine Datei:</label></th>
+                    <tr class="txtZur">
+                        <th colspan="2"><label >Wählen Sie eine Datei:</label></th>
                         <th></th>              
                     </tr>
                     <tr>
                         <td colspan="3"><input type="file" name="file" id="file" accept=".txt, .CSV" class="dateiGross"></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><button type="btn" class="btn"><input type="submit" value="Upload" class="inpBTN"></button></td></td>
+                        <td colspan="3"><button type="btn" ><input type="submit" value="Upload" class="inpBTN"></button></td></td>
                     </tr>
                     <tr>
                         

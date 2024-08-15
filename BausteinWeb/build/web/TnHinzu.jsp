@@ -26,14 +26,16 @@
                     String klass = "";
                 %>
         <div>
-            <p class="zagol">Neuer Teilnehmer hinzufügen</p>
+            <br>
+            <p class="zagol">Neuen Teilnehmer hinzufügen</p>
 
             <form action="TnUpload.jsp" method="post">
+                
                 <table class="tabKlein">
                     <tr>
-                        <td  class="txtBuch">Waehlen Sie bitte eine Klasse: <br>
+                        <th  class="txtZur">Waehlen Sie bitte eine Klasse: <br>
                             <!--<input type="text" name="id" id="id" required>-->
-                        </td>
+                        </th>
                         <td>
                             <label for="kls" class="txtBuch"></label>
                             <select id="kls" name="kls" class="selGross">
@@ -54,15 +56,15 @@
                     </tr> 
                     <tr>
                         <td>
-                            <label for="nameTN" class="txtBuch">Nachname:</label>
+                            <label for="nameTN" class="txtZur">Nachname:</label>
                             <input type="text" name="nameTN" id="nameTN" class="selGross"><br><br>
                         </td>
                         <td>
-                            <label for="vornameTN" class="txtBuch">Vorname:</label>
+                            <label for="vornameTN" class="txtZur">Vorname:</label>
                             <input type="text" name="vornameTN" id="vornameTN" class="selGross"><br><br>
                         </td>
                         <td>
-                            <label for="gebTN" class="txtBuch">Geburtsdatum:</label>
+                            <label for="gebTN" class="txtZur">Geburtsdatum:</label>
                             <input type="date" name="gebTN" id="gebTN" class="selGross"><br><br>
                         </td>
                     </tr>
