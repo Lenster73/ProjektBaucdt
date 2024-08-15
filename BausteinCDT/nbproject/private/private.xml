@@ -5,7 +5,7 @@
         <group>
             <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/session/BausteinBean.java</file>
             <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/session/BausteinBeanRemote.java</file>
-            <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/service/BauService.java</file>
+            <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/entity/Termine.java</file>
         </group>
     </open-files>
 </project-private>

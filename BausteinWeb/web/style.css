@@ -41,6 +41,12 @@ table {
     color: #212244;
 }
 
+.txtBuchCenter{
+    text-align:  center;
+    font-size: 20px;
+    color: #212244;
+}
+
 .txtPlan{
     width: 15%;
     height: 10px ;

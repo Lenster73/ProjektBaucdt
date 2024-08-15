@@ -7,6 +7,7 @@ package service;
 import entity.Baustein;
 import entity.Dozent;
 import entity.Klassen;
+import entity.Raum;
 import entity.Termine;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,12 +18,14 @@ import java.util.List;
 import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author EWorster
  */
 public class BauService {
+    
     
       public Set<Baustein> createBauSetPlus(List<String> alltxt, List<Dozent> dozList) {
         Set<Baustein> bauSet = new HashSet<>();
@@ -98,7 +101,7 @@ public class BauService {
             int datid=Integer.parseInt(datUseList.get(i));
             for(int j=0; j<datList.size();j++){
                 if(datid==datList.get(j).getId()){
-                    Termine dat= new Termine( datList.get(j).getStartBau(),
+                    Termine dat= new Termine(datList.get(j).getStartBau(),
                             datList.get(j).getEndeBau());
                     dat.setBau(datList.get(j).getBau());
                     dat.setKls(datList.get(j).getKls());
@@ -110,4 +113,7 @@ public class BauService {
         
         return datWahlList;
     }
+    
+     
+
 }

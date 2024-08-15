@@ -28,7 +28,7 @@
             %>
           
               
-            <% beanCon.invokeBean().ersetzDatumDB(klass, modul, startDat, endeDat); %>
+            <% beanCon.invokeBean().addDatumModuleDB(klass, modul, startDat, endeDat); %>
            
             <p class="txtBuch">Datum wurde gebucht</h2><p>
 

@@ -36,9 +36,9 @@ public interface BausteinBeanRemote {
 
     public void addDatumBauDB(List<String> datum, String fname);
     public void ersetzDatumDB(String klass, String modul, String startDat, String endeDat);
-//    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat);
+    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat);
 
-    public void addDatumBauManyDB(List<String> datum, String fname);
+    public String addDatumBauManyDB(List<String> datum, String fname);
 
     public void addDatumDB(List<Termine> datList, String fname);
 

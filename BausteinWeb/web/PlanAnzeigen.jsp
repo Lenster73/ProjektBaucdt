@@ -19,62 +19,66 @@
     <body>
         <div ><a href="Home.jsp"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
         <div>
-           
+
             <%
                 BeanConnector beanCon = new BeanConnector();
                 List<Termine> datList = beanCon.invokeBean().datAus();
                 List<Klassen> klsList = beanCon.invokeBean().getKls();
                 String klsid = request.getParameter("kls");
-                int gibt=0;
-                int kid=2000;
+                int gibt = 0;
+                int kid = 2000;
                 for (int i = 0; i < klsList.size(); i++) {
                     if (klsList.get(i).getKlassKurz().equalsIgnoreCase(klsid)) {
                         kid = klsList.get(i).getId();
                         i = klsList.size();
                     }
                 }
+                for (int i = 0; i < datList.size(); i++) {
+                    if (datList.get(i).getKls() != null & datList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klsid)) {
+                        gibt++;
+                    }
+                }
+                if (gibt == 0) {
             %>
+            <p class="txtBuchCenter">Für die Klasse <%=klsid%> gibt es keine Module.<br><br> Wählen Sie bitte andere Klasse oder buchen Sie neue Module.</p>
+                <%} else {%>
             <p class="zagol">Module für Klasse <%=klsid%></p>
             <table >
                 <tr class="txtBuch">
                     <th>Start</th>
                     <th>Ende</th>
-                    
+
                     <th>Modul</th> 
                     <th>Modulbeschreibung</th>  
                     <th>Dozent</th>
-                
+
                 </tr>
-                 <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>
-                <%
-                    for (int i = 0; i < datList.size(); i++) { 
-                    if(datList.get(i).getKls()!=null && datList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klsid)){
-                    //int suchid=datList.get(i).getKls().getId();
-                        //if (suchid == kid) {
-                        gibt++;
-                %>
+                <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>
+                        <%
+                            for (int i = 0; i < datList.size(); i++) {
+                                if (datList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klsid)) {
+                        %>
                 <tr >    
-                    <td class="txtPlan"><%= datList.get(i).getStartBau() %></td>
-                    <td class="txtPlan"><%= datList.get(i).getEndeBau() %></td>
-                    
+                    <td class="txtPlan"><%= datList.get(i).getStartBau()%></td>
+                    <td class="txtPlan"><%= datList.get(i).getEndeBau()%></td>
+
                     <% try {%>
-                    <td class="txtPlan"><%= datList.get(i).getBau().getBauid() %></td>
-                    <td class="txtPlan2"><%= datList.get(i).getBau().getBauBeschr() %></td>
-                    <td class="txtPlan"><%= datList.get(i).getBau().getDoz().getNnameDoz() %></td>
+                    <td class="txtPlan"><%= datList.get(i).getBau().getBauid()%></td>
+                    <td class="txtPlan2"><%= datList.get(i).getBau().getBauBeschr()%></td>
+                    <td class="txtPlan"><%= datList.get(i).getBau().getDoz().getNnameDoz()%></td>
                     <% } catch (Exception e) {
-                    e.printStackTrace();
-                        } %>
+                            e.printStackTrace();
+                        } 
+                    %>
                 </tr>
                 <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>              
-                <%}%>
-                <%} %>    
+                        <% }
+                            }
+                    }%>    
             </table>
-                <% 
-                if (gibt ==0) {%>
-                <p class="txtBuch">Es gibt keine Module fuer diese Klasse. Waelen Sie bitte andere Klasse oder buchen Sie neue Module.</p>
-                <% }%>
-                 <p><a href="KlassWaelen.jsp"> << Zurueck </a><p>
-            
+
+            <p><a href="KlassWaelen.jsp"> << Zurueck </a><p>
+
         </div>
     </body>
 </html>

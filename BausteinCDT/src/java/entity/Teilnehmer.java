@@ -39,8 +39,8 @@ public class Teilnehmer implements Serializable {
     
     public Teilnehmer(){}
 
-    public Teilnehmer(  String tnNname,String tnVname, String tnGeb) {
-        //this.id = id;
+    public Teilnehmer( String tnNname,String tnVname, String tnGeb) {
+//        this.id = id;
         this.tnVname = tnVname;
         this.tnNname = tnNname;
         this.tnGeb = tnGeb;

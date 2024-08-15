@@ -33,10 +33,12 @@
                     Date dateUse = inputFormat.parse(userDat);
                     String useDatCool = outputFormat.format(dateUse);
                     BeanConnector beanCon = new BeanConnector();
-                    List<Termine> datUseList = beanCon.invokeBean().getDatBau(userDat);
+                    List<Termine> datUseList = beanCon.invokeBean().getDatBau(userDat);                   
+                    if(datUseList.size()==0){          
             %>
-          
-            <p class="txtBuch"> Für <%=useDatCool %> haben wir folgende Module:<p>
+            <p class="txtBuchCenter">Am <%=useDatCool %> <br>gibt es keine Module .<br><br>Wählen Sie bitte andere Datum.</p>
+            <%} else{%>
+            <p class="txtBuch"> Am <%=useDatCool %> haben wir folgende Module:<p>
                 <table >
                 <tr class="txtBuch">
                     <th>Modul</th> 
@@ -62,16 +64,18 @@
                 <%}%>
             </table>
 
-                <%  
-                   
+                <%
+                        }
+
                     } catch (Exception e) {
                         e.printStackTrace();
                         out.print("Nicht geklapt!!! Keine Ahnung warum");
                     }
+
                 %>
 
             <p>
-                <a href="Home.jsp"> << Menu </a><p>
+                <a href="DatumWaelen.jsp"> << Zurück </a><p>
 
         </div>
     </body>

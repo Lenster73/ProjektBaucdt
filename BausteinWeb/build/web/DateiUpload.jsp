@@ -33,20 +33,13 @@
 
                     List<String> datum = beanCon.invokeBean().addDatum(alltxt);
 
-                    /*for (int i = 0; i < datum.size(); i++) {
-                        System.out.println(datum.get(i));
-                    }
-
-                    System.out.println(klname);*/
                     beanCon.invokeBean().addDatumBauManyDB(datum, klname);
-
             %>
             <h2>Datei wurde hinzugefügt</h2><p>
 
                 <%  response.sendRedirect("http://localhost:8080/BausteinWeb/Home.jsp");
                     } catch (Exception e) {
                         e.printStackTrace();
-                        out.print("Die Rechnung wurde schon angelegt. Wählen Sie bitte andere Datei");
                     }
 
                 %>

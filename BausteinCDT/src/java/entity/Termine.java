@@ -72,8 +72,8 @@ public class Termine implements Serializable {
     public Termine() {
     }
 
-    public Termine(  String startBau, String endeBau) {
-        //this.id = id;
+    public Termine( String startBau, String endeBau) {
+//        this.id = id;
         this.startBau = startBau;
         this.endeBau = endeBau;
         

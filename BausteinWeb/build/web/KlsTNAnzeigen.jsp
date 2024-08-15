@@ -4,6 +4,7 @@
     Author     : EWorster
 --%>
 
+<%@page import="java.util.Collections"%>
 <%@page import="entity.Teilnehmer"%>
 <%@page import="entity.Klassen"%>
 <%@page import="entity.Termine"%>
@@ -25,6 +26,8 @@
                 BeanConnector beanCon = new BeanConnector();
                 List<Teilnehmer> tnList = beanCon.invokeBean().getTN();
                 List<Klassen> klsList = beanCon.invokeBean().getKls();
+                tnList.sort((t1, t2) -> t1.getTnNname().compareTo(t2.getTnNname()));
+               
                 String klsid = request.getParameter("id");
                 int gibt=0;
                 int kid=800;
@@ -34,8 +37,16 @@
                         i = klsList.size();
                     }
                 }
+                
+                 for(int i=0; i<tnList.size();i++){
+                 if(tnList.get(i).getKls()!=null && tnList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klsid)){
+                        gibt++;
+                } }
+                   if(gibt==0){          
             %>
-            <p class="zagol">Teilnehmern für Klasse <%=klsid%></p>
+            <p class="txtBuchCenter">Für die Klasse <%=klsid %> <br>gibt es keine Teilnehmern.<br><br> Wählen Sie bitte andere Klasse.</p>
+            <%} else{%>
+            <p class="zagol">Teilnehmern für die Klasse <%=klsid%></p>
             <table >
                 <tr class="txtBuch">
                     <th>Nachname</th>
@@ -59,11 +70,9 @@
                 </tr>
                 <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
-                <%} %>    
+                <%} }%>    
             </table>
-                <% if (gibt ==0) {%>
-                <p class="txtBuch">In diese Klasse gibt es keine Teilnehmern. Waelen Sie bitte andere Klasse.</p>
-                <% }%>
+               
                  <p><a href="KlassWaelenTN.jsp"> << Zurueck </a><p>
             
         </div>

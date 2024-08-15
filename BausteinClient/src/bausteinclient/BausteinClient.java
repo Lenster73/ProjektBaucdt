@@ -52,7 +52,7 @@ public class BausteinClient {
         client.loadDatum();
 //        client.aendernDatum();
         client.tnHizufuegen();
-        client.getDatBau();
+        //client.getDatBau();
 
 //        String dataAusF = "11.10.2023";
 //        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -152,14 +152,19 @@ public class BausteinClient {
         List<String> alltxt = beanRemote.txtDatModAus(fNameDat);
 
         List<String> datum = beanRemote.addDatum(alltxt);
-
+       
+//        System.out.println(klname);
+//        
+//
 //        for (int i = 0; i < datum.size(); i++) {
 //            System.out.println(datum.get(i));
 //        }
-//        
+////        
 //        System.out.println(klname);
-        beanRemote.addDatumBauManyDB(datum, klname);
+        
+       System.out.println(beanRemote.addDatumBauManyDB(datum, klname));
 
+        
         //beanRemote.addDatumBauDB(datum, klname);
     }
 

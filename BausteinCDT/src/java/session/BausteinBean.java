@@ -8,6 +8,7 @@ import entity.Baustein;
 import entity.Dozent;
 
 import entity.Klassen;
+import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
 import java.io.BufferedReader;
@@ -91,46 +92,106 @@ public class BausteinBean implements BausteinBeanRemote {
         return datum;
     }
 
-    @Override
-    public void addDatumBauManyDB(List<String> datum, String fname) {
-        String start, ende, baudat;
-        Termine dat = new Termine();
-        Klassen kl = new Klassen();
-        Baustein bau = new Baustein();
-        kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + fname + "'").getSingleResult();
-        int j = 1;
 
-        List<Teilnehmer> datList;
+//!!!!!GUT FUNKTIONIRT VON CHATGPT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
+//    @Override
+//public String addDatumBauManyDB(List<String> datum, String klname) {
+//    String start, ende, baudat, antw = "";
+//    boolean gibt = false;
+//    //int j = 0;
+//    //Raum rm = new Raum();
+//    try {
+//        // Fetch the class object
+//        Klassen kl = (Klassen) em.createQuery("FROM Klassen WHERE klassKurz = :klname", Klassen.class)
+//                                .setParameter("klname", klname)
+//                                .getSingleResult();
+//
+//        // Check if a Termine entry already exists for the class
+//        gibt = em.createQuery("SELECT COUNT(t) FROM Termine t WHERE t.kls.klassKurz = :klname", Long.class)
+//                 .setParameter("klname", klname)
+//                 .getSingleResult() > 0;
+//
+//        if (gibt) {
+//            return "Diese Klasse gibt es schon";
+//        }
+//
+//        // Find the next ID (assuming j is an ID based on the list size)
+//        //j = em.createQuery("SELECT COUNT(t) FROM Termine t", Long.class)
+//              //.getSingleResult().intValue() + 1;
+//
+//        for (int i = 0; i < datum.size() - 1; i += 2) {
+//            int minus = datum.get(i).indexOf('-');
+//            if (minus == -1) {
+//                throw new IllegalArgumentException("Invalid date range format: " + datum.get(i));
+//            }
+//
+//            start = datum.get(i).substring(0, minus).trim();
+//            ende = datum.get(i).substring(minus + 1).trim();
+//            baudat = datum.get(i + 1);
+//
+//            // Fetch the Baustein object
+//            Baustein bau = em.createQuery("FROM Baustein WHERE bauid = :baudat", Baustein.class)
+//                             .setParameter("baudat", baudat)
+//                             .getSingleResult();
+//
+//            // Create and persist the Termine object
+//            Termine dat = new Termine(start, ende);
+//            dat.setKls(kl);
+//            dat.setBau(bau);
+//            //dat.setRaum(rm);
+//            em.persist(dat);
+//
+//            //j++;
+//        }
+//    } catch (Exception e) {
+//        e.printStackTrace();
+//        return "An error occurred: " + e.getMessage();
+//    }
+//
+//    return antw;
+//}
+
+
+    
+    @Override
+    public String addDatumBauManyDB(List<String> datum, String klname) {
+        String start, ende, baudat, antw = "";
+        boolean gibt=false;
+        //Raum rm = new Raum();
+        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klname + "'").getSingleResult();
         try {
-            datList = em.createQuery("From Termine").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table            
+            List<Termine> datList = em.createQuery("From Termine").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table            
+            
             for (int i = 0; i < datList.size(); i++) {
-                if (datList.get(i).getKls() == kl) {
-                    j = 5;
+                if (datList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klname)) {
                     i = datList.size();
+                    antw = "diese Klasse gibt es schon";
+                    gibt=true;
                 }
             }
-            if (datList != null && j != 5) {
+            if(!gibt){
+                
             for (int i = 0; i < datum.size() - 1; i += 2) {
-                int minus = datum.get(i).indexOf('-');
-                start = datum.get(i).substring(0, minus).trim();
-                ende = datum.get(i).substring(minus + 1).trim();
-                baudat = datum.get(i + 1).trim();
-                dat = new Termine(start, ende);
-                bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + baudat + "'").getSingleResult();
+            int minus = datum.get(i).indexOf('-');
+            start = datum.get(i).substring(0, minus).trim();
+            ende = datum.get(i).substring(minus + 1).trim();
+            baudat = datum.get(i + 1); 
+                Baustein bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + baudat + "'").getSingleResult();
+
+                Termine dat = new Termine(start, ende);
                 dat.setKls(kl);
                 dat.setBau(bau);
-
-                if (dat != null) {
-                    em.persist(dat);
-                }
+                //dat.setRaum(rm); 
+                em.persist(dat);
             }
-        } 
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-       
+            }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } 
+        return antw;
     }
+
+   
 
     @Override
     public void tnAusFileHinzu(String fname, String kls) {
@@ -152,7 +213,6 @@ public class BausteinBean implements BausteinBeanRemote {
             Teilnehmer tn = new Teilnehmer(nname, vname, geb);
             tn.setKls(kl);
             tnList.add(tn);
-            //j++;
         }
 
         for (int i = 0; i < tnList.size(); i++) {
@@ -167,49 +227,49 @@ public class BausteinBean implements BausteinBeanRemote {
                 e.printStackTrace();
             }
         }
-
     }
 
-//    @Override
-//    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat) {
-//        Termine dat = new Termine();
-//        List<Termine> datList = new ArrayList<>();
-//        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klass + "'").getSingleResult();
-//        Baustein bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + modul + "'").getSingleResult();
-//        int j = 0;
-//        try {
-//            datList = em.createQuery("From Termine").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table            
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
-//        try {
-//            Date dateS = inputFormat.parse(startDat);
-//            Date dateE = inputFormat.parse(endeDat);
-//            String startD = outputFormat.format(dateS);
-//            String endD = outputFormat.format(dateE);
-//       
-//            for (int i = 0; i < datList.size(); i++) {
-//                if (datList.get(i).getStartBau() == startD && datList.get(i).getEndeBau() == endD
-//                        && datList.get(i).getBau() == bau) {
-//                    j = 5;
-//                    i = datList.size();
-//                }
-//            }
-//            if (j == 0) {
-//                dat = new Termine(startD, endD);
-//                dat.setBau(bau);
-//                dat.setKls(kl);
-//            }
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+    @Override
+    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat) {
+        Termine dat = new Termine();
+        List<Termine> datList = new ArrayList<>();
+        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klass + "'").getSingleResult();
+        Baustein bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + modul + "'").getSingleResult();
+        int j = 0;
+        try {
+            datList = em.createQuery("From Termine").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date dateS = inputFormat.parse(startDat);
+            Date dateE = inputFormat.parse(endeDat);
+            String startD = outputFormat.format(dateS);
+            String endD = outputFormat.format(dateE);
+       
+            for (int i = 0; i < datList.size(); i++) {
+                if (datList.get(i).getStartBau() == startD & datList.get(i).getEndeBau() == endD
+                        & datList.get(i).getBau() == bau & datList.get(i).getKls()==kl) {
+                    j = 5;
+                    i = datList.size();
+                }
+            }
+            if (j == 0) {
+                dat = new Termine(startD, endD);
+                dat.setBau(bau);
+                dat.setKls(kl);
+                em.persist(dat);
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 //        if (dat != null) {
 //            em.persist(dat);
 //        }
-//    }
+    }
 
     @Override
     public void ersetzDatumDB(String klass, String modul, String startDat, String endeDat) {
