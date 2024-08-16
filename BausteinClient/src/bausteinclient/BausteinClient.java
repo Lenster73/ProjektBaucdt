@@ -7,6 +7,7 @@ package bausteinclient;
 import entity.Baustein;
 import entity.Dozent;
 import entity.Klassen;
+import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
 import java.io.BufferedReader;
@@ -49,6 +50,7 @@ public class BausteinClient {
         client.loadDoz();
         client.loadBauDB();
         client.loadKlassen();
+        client.loadRaum();
         client.loadDatum();
 //        client.aendernDatum();
         client.tnHizufuegen();
@@ -110,6 +112,14 @@ public class BausteinClient {
         List<String> alltxt = beanRemote.txtDatModAus(fname);
         List<Klassen> klList = bauSer.createKlassen(alltxt);
         beanRemote.addKl(klList);
+    }
+    
+    public void loadRaum(){
+        BauService bauSer = new BauService();
+        String rname = "raum.txt";
+        List<String> alltxt = beanRemote.txtDatModAus(rname);
+        List<Raum> rList = bauSer.createRaum(alltxt);
+        beanRemote.addRaum(rList);
     }
 
     public void aendernDatum() {

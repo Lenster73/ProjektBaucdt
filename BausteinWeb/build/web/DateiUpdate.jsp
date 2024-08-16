@@ -4,6 +4,7 @@
     Author     : EWorster
 --%>
 
+<%@page import="entity.Raum"%>
 <%@page import="entity.Klassen"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="entity.Baustein"%>
@@ -47,11 +48,16 @@
                     List<String> alltxtKls = beanCon.invokeBean().txtDatModAus(fname);
                     List<Klassen> klList = bauSer.createKlassen(alltxtKls);
                     beanCon.invokeBean().addKl(klList);
-                    
+
+                    String rname = "raum.txt";
+                    List<String> alltxt = beanCon.invokeBean().txtDozAus(rname);
+                    List<Raum> rList = bauSer.createRaum(alltxt);
+                    beanCon.invokeBean().addRaum(rList);
+
                     String tnname = "tn-fi27.CSV";
                     String kls = "FI28";
                     beanCon.invokeBean().tnAusFileHinzu(tnname, kls);
-                    
+
                     response.sendRedirect("http://localhost:8080/BausteinWeb/Home.jsp");
                 } catch (Exception e) {
                     e.printStackTrace();

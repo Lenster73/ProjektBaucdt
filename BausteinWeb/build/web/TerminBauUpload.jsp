@@ -23,12 +23,13 @@
                 String endeDat = request.getParameter("endeD");
                 String klass = request.getParameter("kls");
                 String modul = request.getParameter("modul");
+                String raum = request.getParameter("raum");
                 try {
                     BeanConnector beanCon = new BeanConnector();     
             %>
           
               
-            <% beanCon.invokeBean().addDatumModuleDB(klass, modul, startDat, endeDat); %>
+            <% beanCon.invokeBean().addDatumModuleDB(klass, modul, raum, startDat, endeDat); %>
            
             <p class="txtBuch">Datum wurde gebucht</h2><p>
 

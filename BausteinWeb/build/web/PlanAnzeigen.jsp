@@ -51,9 +51,10 @@
                     <th>Modul</th> 
                     <th>Modulbeschreibung</th>  
                     <th>Dozent</th>
+                    <th>Raum</th>
 
                 </tr>
-                <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>
+                <tr> <td colspan="6" class="txtPlanLine"><hr></td></tr>
                         <%
                             for (int i = 0; i < datList.size(); i++) {
                                 if (datList.get(i).getKls().getKlassKurz().equalsIgnoreCase(klsid)) {
@@ -66,12 +67,15 @@
                     <td class="txtPlan"><%= datList.get(i).getBau().getBauid()%></td>
                     <td class="txtPlan2"><%= datList.get(i).getBau().getBauBeschr()%></td>
                     <td class="txtPlan"><%= datList.get(i).getBau().getDoz().getNnameDoz()%></td>
-                    <% } catch (Exception e) {
+                    <% String rNr=datList.get(i).getRaum().getRaumNr(); if(rNr!=null){%>
+                     <td class="txtPlan"><%= datList.get(i).getRaum().getRaumNr() %></td>
+                    <% }
+                        } catch (Exception e) {
                             e.printStackTrace();
                         } 
                     %>
                 </tr>
-                <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>              
+                <tr> <td colspan="6" class="txtPlanLine"><hr></td></tr>              
                         <% }
                             }
                     }%>    

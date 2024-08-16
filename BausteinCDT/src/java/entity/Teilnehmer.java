@@ -6,6 +6,8 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,22 +15,36 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 /**
  *
  * @author EWorster
  */
 @Entity
 @Table(name = "tn")
-public class Teilnehmer implements Serializable {
 
+public class Teilnehmer implements Serializable {
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+//    private String tnId;
     private String tnNname;
     private String tnVname;
+//    private String tnStrNr;
+//    private String tnPlz;
+//    private String tnOrt;
+//    private String tnTelNr;
+//    private String tnEmail;
     private String tnGeb;
-    
+//    private String tnGebort;
+//    private String tnNation;
+//    private String tnBeruf;
+//    private String tnAbschluss;
+//    private String tnBerater;
+//    private String tnJCNummer;
+   
 //    @ManyToOne 
 //    @JoinColumn(name="datid")
 //    private Termine dat;
@@ -38,15 +54,37 @@ public class Teilnehmer implements Serializable {
     private Klassen kls;
     
     public Teilnehmer(){}
+    
+    
 
-    public Teilnehmer( String tnNname,String tnVname, String tnGeb) {
-//        this.id = id;
-        this.tnVname = tnVname;
+//    public Teilnehmer(String tnId, String tnNname, String tnVname, String tnStrNr, String tnPlz, String tnOrt, String tnTelNr, String tnEmail, String tnGeb, String tnGebort, String tnNation, String tnBeruf, 
+//            String tnAbschluss, String tnBerater, String tnJCNummer, Geschlecht tnGeschlecht, Klassen kls) {
+//        this.tnId = tnId;
+//        this.tnNname = tnNname;
+//        this.tnVname = tnVname;
+//        this.tnStrNr = tnStrNr;
+//        this.tnPlz = tnPlz;
+//        this.tnOrt = tnOrt;
+//        this.tnTelNr = tnTelNr;
+//        this.tnEmail = tnEmail;
+//        this.tnGeb = tnGeb;
+//        this.tnGebort = tnGebort;
+//        this.tnNation = tnNation;
+//        this.tnBeruf = tnBeruf;
+//        this.tnAbschluss = tnAbschluss;
+//        this.tnBerater = tnBerater;
+//        this.tnJCNummer = tnJCNummer;
+//        this.tnGeschlecht = tnGeschlecht;
+//        this.kls = kls;
+//    }
+
+    
+
+    public Teilnehmer(String tnNname, String tnVname, String tnGeb) {
         this.tnNname = tnNname;
+        this.tnVname = tnVname;
         this.tnGeb = tnGeb;
     }
-    
-    
 
     public int getId() {
         return id;

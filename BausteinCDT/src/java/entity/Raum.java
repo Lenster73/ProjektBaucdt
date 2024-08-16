@@ -30,12 +30,14 @@ public class Raum implements Serializable {
     //@GeneratedValue(strategy = GenerationType.AUTO)
    
     private String raumNr;
+    private String platzAnz;
     
     public Raum(){}
 
-    public Raum(int rid, String raumNr) {
+    public Raum(int rid, String raumNr, String platzAnz) {
         this.rid = rid;
         this.raumNr = raumNr;
+        this.platzAnz = platzAnz;
     }
  
     @OneToMany(mappedBy = "raum")
@@ -55,6 +57,14 @@ public class Raum implements Serializable {
 
     public void setRaumNr(String raumNr) {
         this.raumNr = raumNr;
+    }
+
+    public String getPlatzAnz() {
+        return platzAnz;
+    }
+
+    public void setPlatzAnz(String platzAnz) {
+        this.platzAnz = platzAnz;
     }
 
     public List<Termine> getDatList() {

@@ -68,6 +68,7 @@
                             <input type="date" name="gebTN" id="gebTN" class="selGross"><br><br>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="3">
                             <button type="submit" class="btn">Ausgeben</button>

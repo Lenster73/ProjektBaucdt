@@ -95,6 +95,19 @@ public class BauService {
         return klList;
     }
     
+    public List<Raum> createRaum(List<String> alltxt) {
+        List<Raum> rList = new ArrayList<>();
+        int j = 0;
+        for (int i = 0; i < (alltxt.size()-1); i +=2) {
+            String rname = alltxt.get(i);
+            String platz = alltxt.get(i+1);
+            Raum raum = new Raum(j, rname, platz);
+            j++;
+            rList.add(raum);
+        }
+        return rList;
+    }
+    
     public List<Termine> useDatTermine(List<String> datUseList, List<Termine> datList){
         List<Termine> datWahlList= new ArrayList<>();
         for(int i=0; i<datUseList.size(); i++){

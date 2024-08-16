@@ -33,6 +33,7 @@ import javax.persistence.TypedQuery;
 import jdk.nashorn.internal.runtime.regexp.RegExp;
 import service.BauService;
 
+
 /**
  *
  * @author EWorster
@@ -73,6 +74,21 @@ public class BausteinBean implements BausteinBeanRemote {
             e.printStackTrace();
         }
     }
+      
+//       @Override
+//      public void addTnKlsGeschl(String kl, String nname, String vname, String geb ) {
+//        try {
+//            Klassen kls=(Klassen) em.createQuery("From Klassen Where klassKurz = '" + kl + "'").getSingleResult();
+//            Teilnehmer tn= new Teilnehmer(nname, vname, geb, geschl);
+//            //tn.setTnGeschlecht(geschl);
+//            tn.setKls(kls);
+//            if(tn!= null){
+//            em.persist(tn);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     public List<String> addDatum(List<String> alltxt) {
@@ -205,6 +221,8 @@ public class BausteinBean implements BausteinBeanRemote {
         } catch (Exception e) {
             e.printStackTrace();
         }
+//        Teilnehmer tn= new Teilnehmer();
+//        tn.setTnGeschlecht(Geschlecht.Maennlich);
         //int j = 0;
         for (int i = 4; i <= (alltxt.size() - 4); i += 4) {
             String nname = alltxt.get(i + 1);
@@ -230,10 +248,11 @@ public class BausteinBean implements BausteinBeanRemote {
     }
 
     @Override
-    public void addDatumModuleDB(String klass, String modul, String startDat, String endeDat) {
+    public void addDatumModuleDB(String klass, String modul,String raum, String startDat, String endeDat) {
         Termine dat = new Termine();
         List<Termine> datList = new ArrayList<>();
         Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klass + "'").getSingleResult();
+        Raum r = (Raum) em.createQuery("From Raum Where raumNr = '" + raum + "'").getSingleResult();
         Baustein bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + modul + "'").getSingleResult();
         int j = 0;
         try {
@@ -261,6 +280,7 @@ public class BausteinBean implements BausteinBeanRemote {
                 dat = new Termine(startD, endD);
                 dat.setBau(bau);
                 dat.setKls(kl);
+                dat.setRaum(r);
                 em.persist(dat);
             }
         } catch (ParseException e) {
@@ -426,6 +446,22 @@ public class BausteinBean implements BausteinBeanRemote {
             }
         }
     }
+    
+     @Override
+    public void addRaum(List<Raum> rList) {
+        Raum raum = new Raum();
+
+        for (int i = 0; i < rList.size(); i++) {
+            int idr = rList.get(i).getRid();
+            String rNum =rList.get(i).getRaumNr();
+            String platz =rList.get(i).getPlatzAnz();
+            Raum klSuch = em.find(Raum.class,
+                    idr);
+            if (klSuch == null) {
+                em.persist(new Raum(idr, rNum, platz));
+            }
+        }
+    }
 
     @Override
     public void addBau(Set<Baustein> bauSet) {
@@ -516,6 +552,18 @@ public class BausteinBean implements BausteinBeanRemote {
             List<Klassen> klsList = em.createQuery("From Klassen").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
             //System.out.println(rList.get(0).getId());
             return klsList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+     @Override
+    public List<Raum> getRaum() {
+        try {
+            List<Raum> rList = em.createQuery("From Raum").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
+            //System.out.println(rList.get(0).getId());
+            return rList;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
