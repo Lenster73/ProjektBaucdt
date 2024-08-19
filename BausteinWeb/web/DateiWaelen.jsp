@@ -32,7 +32,7 @@
                     </tr>
                     <tr>
                         
-                        <td><a href="Home.jsp"> << Menu</a></tr>
+                        <td><a href="Home.jsp" class="txtZur"> << Menu</a></tr>
                     
                     </tr>
             </form>

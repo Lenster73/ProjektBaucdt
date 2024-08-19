@@ -41,7 +41,7 @@
                 %>
 
             <p>
-                <a href="Home.jsp"> << Menu </a><p>
+                <a href="Home.jsp" class="txtZur"> << Menu </a><p>
 
         </div>
     </body>

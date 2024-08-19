@@ -47,7 +47,7 @@
                 <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
             </table>
-                 <p><a href="Home.jsp"> << Zurueck </a><p>
+                 <p><a href="Home.jsp" class="txtZur"> << Zurueck </a><p>
             
         </div>
     </body>

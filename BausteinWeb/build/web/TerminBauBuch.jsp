@@ -87,7 +87,7 @@
                                         e.printStackTrace();
                                     }
                                 %> 
-                                <option value="<%=raumNr%>" ><%=raumNr%> (Platzantzahl: <%=raum.getPlatzAnz() %>)</option>
+                                <option value="<%=raumNr%>" ><%=raumNr%> (Sitzplaetze: <%=raum.getPlatzAnz() %>)</option>
                                 <%}%>                       
                             </select>
                         </td>
@@ -110,7 +110,7 @@
                         </td>   </tr>  
                     <tr>
                         <td  colspan="6">
-                            <a href="Home.jsp"> << Menu</a></p>
+                            <a href="Home.jsp" class="txtZur"> << Menu</a></p>
                         </td>
                     </tr>
                 </table>

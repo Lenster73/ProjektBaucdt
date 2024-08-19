@@ -59,7 +59,7 @@
 
                 </table>
             </form>
-            <p class="txtZur"><a href="Home.jsp"> << Menu</a></p>
+            <p ><a href="Home.jsp" class="txtZur"> << Menu</a></p>
         </div>
     </body>
 </html>

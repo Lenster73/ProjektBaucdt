@@ -78,7 +78,7 @@
                 %>
 
             <p>
-                <a href="DatumWaelen.jsp"> << Zurück </a><p>
+                <a href="DatumWaelen.jsp" class="txtZur"> << Zurück </a><p>
 
         </div>
     </body>

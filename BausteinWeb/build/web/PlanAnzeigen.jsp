@@ -81,7 +81,7 @@
                     }%>    
             </table>
 
-            <p><a href="KlassWaelen.jsp"> << Zurueck </a><p>
+            <p><a href="KlassWaelen.jsp" class="txtZur"> << Zurueck </a><p>
 
         </div>
     </body>

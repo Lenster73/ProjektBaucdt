@@ -71,10 +71,8 @@
                 <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
                 <%} }%>    
-            </table>
-               
-                 <p><a href="KlassWaelenTN.jsp"> << Zurueck </a><p>
-            
+            </table>   
+                 <p><a href="KlassWaelenTN.jsp" class="txtZur"> << Zurueck </a><p> 
         </div>
     </body>
 </html>
