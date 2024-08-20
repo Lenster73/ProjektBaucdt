@@ -29,11 +29,14 @@
             %>
           
               
-            <% beanCon.invokeBean().addDatumModuleDB(klass, modul, raum, startDat, endeDat); %>
-           
-            <p class="txtBuch">Datum wurde gebucht</h2><p>
+            <% int antw='y'; antw=beanCon.invokeBean().addDatumModuleDBPruf(klass, modul, raum, startDat, endeDat);
+            if (antw=='n'){%>
+            <p class="txtBuch">An diesem Zeitreum gibt es schon einen Modul</p>
+                <% } else {%>
+            <p class="txtBuch">Datum wurde gebucht</p>
 
                 <%  /*response.sendRedirect("http://localhost:8080/BausteinWeb/Home.jsp");*/
+                    }
                     } catch (Exception e) {
                         e.printStackTrace();
                         out.print("Nicht geklapt!!! Keine Ahnung warum");

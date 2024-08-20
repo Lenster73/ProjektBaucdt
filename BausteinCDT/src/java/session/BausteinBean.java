@@ -246,6 +246,57 @@ public class BausteinBean implements BausteinBeanRemote {
             }
         }
     }
+    
+    @Override
+    public int addDatumModuleDBPruf(String klass, String modul, String raum, String startDat, String endeDat) {
+        Termine dat = new Termine();
+        List<Termine> datList = new ArrayList<>();
+        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klass + "'").getSingleResult();
+        Raum r = (Raum) em.createQuery("From Raum Where raumNr = '" + raum + "'").getSingleResult();
+        Baustein bau = (Baustein) em.createQuery("From Baustein Where bauid = '" + modul + "'").getSingleResult();
+        int j = 0, g='y';
+        try {
+            datList = em.createQuery("From Termine").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+         
+        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        try {
+            LocalDate dateS = LocalDate.parse(startDat, inputFormat);
+            LocalDate dateE = LocalDate.parse(endeDat, inputFormat);
+            String startD = outputFormat.format(dateS);
+            String endD = outputFormat.format(dateE);
+       
+            for (int i = 0; i < datList.size(); i++) {
+                String endAusDB=datList.get(i).getEndeBau();
+                String startAusDB=datList.get(i).getStartBau();
+                LocalDate dateEndDB=LocalDate.parse(endAusDB, outputFormat);
+                LocalDate dateStartDB=LocalDate.parse(startAusDB,outputFormat);
+                if (dateS.isBefore(dateEndDB)& dateS.isAfter(dateStartDB)){
+                    g='n';
+                } 
+            }
+            for (int i = 0; i < datList.size(); i++) {
+                if (datList.get(i).getStartBau().equalsIgnoreCase(startD) & datList.get(i).getEndeBau().equalsIgnoreCase(endD)
+                        & datList.get(i).getBau() == bau & datList.get(i).getKls()==kl) {
+                    j = 5;
+                    i = datList.size();
+                }
+            }
+            if (j == 0 & g!='n') {
+                dat = new Termine(startD, endD);
+                dat.setBau(bau);
+                dat.setKls(kl);
+                dat.setRaum(r);
+                em.persist(dat);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return g;
+    }
 
     @Override
     public void addDatumModuleDB(String klass, String modul,String raum, String startDat, String endeDat) {
@@ -286,9 +337,6 @@ public class BausteinBean implements BausteinBeanRemote {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-//        if (dat != null) {
-//            em.persist(dat);
-//        }
     }
 
     @Override

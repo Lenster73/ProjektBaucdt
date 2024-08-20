@@ -32,10 +32,17 @@ public class Baustein implements Serializable {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private String bauBeschr;
+    private int bauTage;
 
     public Baustein() {
     }
 
+    public Baustein(String bauid, String bauBeschr, int bauTage) {
+        this.bauid = bauid;
+        this.bauBeschr = bauBeschr;
+        this.bauTage= bauTage;
+    }
+    
     public Baustein(String bauid, String bauBeschr) {
         this.bauid = bauid;
         this.bauBeschr = bauBeschr;
@@ -67,6 +74,16 @@ public class Baustein implements Serializable {
     public void setDoz(Dozent doz) {
         this.doz = doz;
     }
+
+    public int getBauTage() {
+        return bauTage;
+    }
+
+    public void setBauTage(int bauTage) {
+        this.bauTage = bauTage;
+    }
+    
+    
 
     public String getBauid() {
         return bauid;
