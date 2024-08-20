@@ -33,13 +33,13 @@
                     List<Dozent> dozList = bauSer.createDozList(alltxtDoz);
                     beanCon.invokeBean().addDoz(dozList);
 
-                    String fName = "bauDoz.txt";
+                    String fName = "bauDozTag.txt";
                     List<String> alltxtBauDoz;
-                    alltxtBauDoz = beanCon.invokeBean().txtBauDozAus(fName);
+                    alltxtBauDoz = beanCon.invokeBean().txtBauDozTagAus(fName);
 
                     alltxtDoz = beanCon.invokeBean().txtDozAus(fNameDoz);
 
-                    Set<Baustein> bauSet = bauSer.createBauSetPlus(alltxtBauDoz, dozList);
+                    Set<Baustein> bauSet = bauSer.createBauSetTag(alltxtBauDoz, dozList);
                     Iterator<Baustein> iter = bauSet.iterator();
 
                     beanCon.invokeBean().addBauDB(bauSet);

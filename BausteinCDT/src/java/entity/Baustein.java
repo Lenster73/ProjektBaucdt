@@ -43,10 +43,10 @@ public class Baustein implements Serializable {
         this.bauTage= bauTage;
     }
     
-    public Baustein(String bauid, String bauBeschr) {
-        this.bauid = bauid;
-        this.bauBeschr = bauBeschr;
-    }
+//    public Baustein(String bauid, String bauBeschr) {
+//        this.bauid = bauid;
+//        this.bauBeschr = bauBeschr;
+//    }
 
     @ManyToOne
     @JoinColumn(name = "dozid")

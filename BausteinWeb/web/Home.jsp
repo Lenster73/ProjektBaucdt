@@ -33,11 +33,12 @@
                     <td colspan="3" ><a href="DateiWaelen.jsp"> <button type="btn" >Alten Plan waehlen und hochladen</button></a><p></td>
                 </tr>
                <tr>
-                    <th colspan="6"  class="txtZur">Module anzeigen:</th>
+                    <th colspan="6"  class="txtZur">Module:</th>
                 </tr>
                 <tr>
-                    <td colspan="3"><a href="DozBauAnzeigen.jsp"><button type="btn">Alle Module anzeigen</button></a><p></td>                 
-                    <td colspan="3"><a href="DatumWaelen.jsp"> <button type="btn">Module fuer einen Stichtag anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="DozBauAnzeigen.jsp"><button type="btn">Alle Module anzeigen</button></a><p></td>                 
+                    <td colspan="2"><a href="DatumWaelen.jsp"> <button type="btn">Module fuer einen Stichtag anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="ModulAnlegen.jsp"> <button type="btn">Neue Module anlegen</button></a><p></td>
                 </tr>
                 <tr>                    
                     <th colspan="6"  class="txtZur">Klassen anzeigen oder bearbeiten:</th>                   
@@ -49,12 +50,12 @@
                 </tr>
                 
                 <tr>
-                    <th colspan="6"  class="txtZur">Teilnehmern hinzufuegen, loeschen oder die Klasse fuer TN aendern:</th>
+                    <th colspan="6"  class="txtZur">Teilnehmern hinzufuegen oder inaktiv setzen:</th>
                 </tr>
                 <tr>
-                    <td colspan="3"><a href="KlassWaelenTN.jsp"><button type="btn">TN einer Klasse anzeigen</button></a><p></td>
-                    <td colspan="3"><a href="TnHinzu.jsp"> <button type="btn" >TN zu einer Klasse hinzufuegen</button></a><p></td>
-               
+                    <td colspan="2"><a href="KlassWaelenTN.jsp"><button type="btn">TN einer Klasse anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="TnHinzu.jsp"> <button type="btn" >TN zu einer Klasse hinzufuegen</button></a><p></td>
+                    <td colspan="2"><a href="TnWaelen.jsp"> <button type="btn" >TN inaktiv setzen</button></a><p></td>
             </table>
         </div>
     </body>

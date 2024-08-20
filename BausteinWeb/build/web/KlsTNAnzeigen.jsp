@@ -57,8 +57,8 @@
                 <%
                     for (int i = 0; i < tnList.size(); i++) { 
                     int suchid=tnList.get(i).getKls().getId();
-                        if (suchid == kid) {
-                        gibt++;
+                        if (suchid == kid & tnList.get(i).isIst().equalsIgnoreCase("y")) {
+                        
                 %>
                 <tr >        
                     <% try {%>

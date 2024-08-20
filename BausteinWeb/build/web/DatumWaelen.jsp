@@ -22,10 +22,10 @@
 
             <form action="DatumBauAnzeigen.jsp" method="post">
                 <br>
-                <p class="zagol">Alle Module fuer den Tad</p>
+                <p class="zagol">Alle Module fuer das Startdatum</p>
                 <table class="tabKlein">
                     <tr class="txtZur">
-                        <th colspan="2"><label >Geben Sie bitte ein Datum ein:</label> <p></th>
+                        <th colspan="2"><label >Geben Sie bitte ein Startdatum (Mo) ein:</label> <p></th>
                     </tr>
                     <tr class="txtZur">
                   

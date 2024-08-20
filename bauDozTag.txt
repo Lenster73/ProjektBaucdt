@@ -1,0 +1,53 @@
+M19W;Professionell Texte erstellen mit MS Word 2019;10;8
+M19E;Professionelle Tabellenkalkulation mit MS Excel;10;8
+VWLO;Volkswirtschaft, Betriebswirtschaft und Organisationslehre;10;2
+KORE;Kosten- und Leistungsrechnung;5;2
+WIRE;Wirtschafts- und Arbeitsrecht;5;2
+BEVT;Grundlagen der Beschaffungs- und Absatzwirtschaft;5;5
+ESIT;Erfolgreich Softskills im IT-Bereich einsetzen;10;2
+DBET;Digitale Basis erfolgreicher;5;1
+GRIT;Grundlagen Informationstechnologie;10;7
+GRHW;Grundlagen Hardware;10;7
+NETE;Netzwerktechnologien und Netzwerkprotokolle verstehen;5;5
+GRDS;Grundlagen Datensicherheit und Datenschutz;5;5
+W19I;MS Windows Server 2019 - Installation und Konfiguration;10;5
+W19A;MS Windows Server 2019 - Administration;10;5
+GRTW;Grundlagen Telekommunikation/WAN-Technologien;5;1
+GPMM;Grundlagen Projektmanagement;10;4
+GRDB;Relationale Datenbanken;10;6
+TSQL;Professioneller Einstieg in Microsoft T-SQL;5;0
+RDBE;RELATIONALE DB-ANWENDUNGEN ENTWERFEN (SQL);10;0
+GRPR;Grundlagen Programmierung;10;0
+JAV1;Objektorientiert programmieren mit Java (1);10;0
+SEOS;Software-Engineering (1): Objektorientierte Soft;5;0
+JAV2;Objektorientiert programmieren mit Java (2);5;0
+CSRK;Cisco-Switches und - Router konfigurieren;5;1
+RSIT;Routing-, Switching-Technologien und IP-Telephonie;10;3
+LGRS;Linux - Grundlagen des Betriebssystems;5;3
+LISY;Linux - Systemverwaltung;10;3
+LTCP;Linux - TCP/IP-Netze einrichten;5;3
+LIKK;Linux - Intranets implementieren und administrieren;10;5
+LIFP;Linux - Firewalls und Proxyserver einrichten;5;5
+FHTN;Fallstudie: Heterogene Netze implementieren;10;5
+PMD1;IT-Projekte;5;-1
+PMD2;IT-Projekte steuern;10;-1
+BK01;BETRIEBSPRAKTIKUM;10;-1
+BK02;BETRIEBSPRAKTIKUM;10;-1
+BK03;BETRIEBSPRAKTIKUM;10;-1
+BK04;BETRIEBSPRAKTIKUM;10;-1
+BK05;BETRIEBSPRAKTIKUM;10;-1
+BK06;BETRIEBSPRAKTIKUM;10;-1
+BK07;BETRIEBSPRAKTIKUM;10;-1
+BK08;BETRIEBSPRAKTIKUM;10;-1
+BK09;BETRIEBSPRAKTIKUM;10;-1
+BK10;BETRIEBSPRAKTIKUM;10;-1
+BK11;BETRIEBSPRAKTIKUM;10;-1
+BK12;BETRIEBSPRAKTIKUM;10;-1
+BK13;BETRIEBSPRAKTIKUM;10;-1
+PRUK;Pruefungsvorbereitung;15;4
+BK14;BETRIEBSPRAKTIKUM;10;-1
+BK15;BETRIEBSPRAKTIKUM;10;-1
+BK16;BETRIEBSPRAKTIKUM;10;-1
+BK17;BETRIEBSPRAKTIKUM;10;-1
+BK18;BETRIEBSPRAKTIKUM;10;-1
+

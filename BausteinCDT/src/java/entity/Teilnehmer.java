@@ -38,6 +38,7 @@ public class Teilnehmer implements Serializable {
 //    private String tnTelNr;
 //    private String tnEmail;
     private String tnGeb;
+    private String ist;
 //    private String tnGebort;
 //    private String tnNation;
 //    private String tnBeruf;
@@ -79,12 +80,17 @@ public class Teilnehmer implements Serializable {
 //    }
 
     
-
-    public Teilnehmer(String tnNname, String tnVname, String tnGeb) {
+     public Teilnehmer(String tnNname, String tnVname, String tnGeb, String ist) {
         this.tnNname = tnNname;
         this.tnVname = tnVname;
         this.tnGeb = tnGeb;
+        this.ist=ist;
     }
+//    public Teilnehmer(String tnNname, String tnVname, String tnGeb) {
+//        this.tnNname = tnNname;
+//        this.tnVname = tnVname;
+//        this.tnGeb = tnGeb;
+//    }
 
     public int getId() {
         return id;
@@ -117,6 +123,16 @@ public class Teilnehmer implements Serializable {
     public void setTnGeb(String tnGeb) {
         this.tnGeb = tnGeb;
     }
+
+    public String isIst() {
+        return ist;
+    }
+
+    public void setIst(String ist) {
+        this.ist = ist;
+    }
+    
+    
 
 //    public Termine getDat() {
 //        return dat;

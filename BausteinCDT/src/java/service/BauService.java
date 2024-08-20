@@ -27,15 +27,43 @@ import javax.persistence.PersistenceContext;
 public class BauService {
     
     
-      public Set<Baustein> createBauSetPlus(List<String> alltxt, List<Dozent> dozList) {
+//      public Set<Baustein> createBauSetPlus(List<String> alltxt, List<Dozent> dozList) {
+//        Set<Baustein> bauSet = new HashSet<>();
+//        Dozent doz= new Dozent();
+//        for (int i = 0; i < (alltxt.size() - 2); i += 3) {
+//            String bauID = alltxt.get(i);
+//            String bauBesch = (alltxt.get(i + 1));
+//            String dozid=alltxt.get(i + 2);
+//           
+//            Baustein bau = new Baustein(bauID, bauBesch);
+//            if(dozid.equalsIgnoreCase("-1")){
+//                doz=null;
+//                bau.setDoz(doz);
+//            }else{
+//                int did=Integer.parseInt(dozid);
+//                for(int j=0; j<dozList.size(); j++){
+//                     if(dozList.get(j).getId()==did){
+//                         doz=new Dozent(dozList.get(j).getId(),
+//                                 dozList.get(j).getVnameDoz(),dozList.get(j).getNnameDoz());
+//                         bau.setDoz(doz);
+//                     }
+//                }
+//            }
+//            bauSet.add(bau);
+//        }
+//        return bauSet;
+//    }
+      
+     public Set<Baustein> createBauSetTag(List<String> alltxt, List<Dozent> dozList) {
         Set<Baustein> bauSet = new HashSet<>();
         Dozent doz= new Dozent();
-        for (int i = 0; i < (alltxt.size() - 2); i += 3) {
+        for (int i = 0; i < (alltxt.size() - 3); i += 4) {
             String bauID = alltxt.get(i);
             String bauBesch = (alltxt.get(i + 1));
-            String dozid=alltxt.get(i + 2);
+            int bauTag=Integer.parseInt(alltxt.get(i + 2));
+            String dozid=alltxt.get(i + 3);
            
-            Baustein bau = new Baustein(bauID, bauBesch);
+            Baustein bau = new Baustein(bauID, bauBesch, bauTag);
             if(dozid.equalsIgnoreCase("-1")){
                 doz=null;
                 bau.setDoz(doz);
@@ -55,19 +83,20 @@ public class BauService {
     }
 
 
-    public Set<Baustein> createBauSet(List<String> alltxt) {
-        Set<Baustein> bauSet = new HashSet<>();
 
-        for (int i = 0; i < (alltxt.size() - 2); i += 3) {
-            String bauID = alltxt.get(i);
-            String bauBesch = alltxt.get(i + 1);
-            int did=Integer.parseInt(alltxt.get(i+2));
-            Baustein bau = new Baustein(bauID, bauBesch);
-            
-            bau.getDoz().setId(did);
-        }
-        return bauSet;
-    }
+//    public Set<Baustein> createBauSet(List<String> alltxt) {
+//        Set<Baustein> bauSet = new HashSet<>();
+//
+//        for (int i = 0; i < (alltxt.size() - 2); i += 3) {
+//            String bauID = alltxt.get(i);
+//            String bauBesch = alltxt.get(i + 1);
+//            int did=Integer.parseInt(alltxt.get(i+2));
+//            Baustein bau = new Baustein(bauID, bauBesch);
+//            
+//            bau.getDoz().setId(did);
+//        }
+//        return bauSet;
+//    }
 
     public List<Dozent> createDozList(List<String> alltxt) {
         List<Dozent> dozList = new ArrayList<>();

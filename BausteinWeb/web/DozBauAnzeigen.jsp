@@ -28,10 +28,11 @@
             <table >
                 <tr class="txtZur">
                     <th>Modul</th> 
-                    <th>Modulbeschreibung</th>  
+                    <th>Modulbeschreibung</th> 
+                    <th>Dauer</th> 
                     <th>Dozent</th>
                 </tr>
-                 <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>
+                 <tr> <td colspan="4" class="txtPlanLine"><hr></td></tr>
                 <%
                     for (int i = 0; i < bauList.size(); i++) { 
                     
@@ -40,11 +41,12 @@
                     <% try {%>
                     <td class="txtPlan"><%= bauList.get(i).getBauid() %></td>
                     <td class="txtPlan2"><%= bauList.get(i).getBauBeschr() %></td>
-                    <td class="txtPlan"><%= bauList.get(i).getDoz().getNnameDoz() %></td>
+                    <td class="txtPlan"><%= bauList.get(i).getBauTage() %> Tag</td>
+                    <td class="txtPlan"><%= bauList.get(i).getDoz().getNnameDoz() %> </td>
                     <% } catch (Exception e) {
                         } %>
                 </tr>
-                <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>              
+                <tr> <td colspan="4" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
             </table>
                  <p><a href="Home.jsp" class="txtZur"> << Zurueck </a><p>

@@ -39,31 +39,35 @@
             <p class="txtBuchCenter">Am <%=useDatCool %> <br>gibt es keine Module .<br><br>Wählen Sie bitte andere Datum.</p>
             <%} else{%>
             
-            <p class="txtBuch"> Am <%=useDatCool %> haben wir folgende Module:<p>
+            <p class="txtBuch"> Am <%=useDatCool %> laufen folgende Module:<p>
                 <table >
                 <tr class="txtZur">
+                    
                     <th>Modul</th> 
-                    <th>Modulbeschreibung</th> 
-                     <th>Klasse</th> 
+                    <th>Modulbeschreibung</th>
+                    <th>Start-Ende</th> 
+                    <th>Klasse</th> 
                     <th>Dozent</th>
                     <th>Raum</th>
                 </tr>
-                 <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>
+                 <tr> <td colspan="6" class="txtPlanLine"><hr></td></tr>
                 <%
                     for (int i = 0; i < datUseList.size(); i++) { 
                     
                 %>
                 <tr >                  
                     <% try {%>
+                    
                     <td class="txtPlan"><%= datUseList.get(i).getBau().getBauid() %></td>
-                    <td class="txtPlan2"><%= datUseList.get(i).getBau().getBauBeschr() %></td>
-                     <td class="txtPlan"><%= datUseList.get(i).getKls().getKlassKurz() %></td>
+                    <td class="txtPlan2"><%= datUseList.get(i).getBau().getBauBeschr() %></td> 
+                    <td class="txtPlan2"><%= datUseList.get(i).getStartBau()+" - "+datUseList.get(i).getEndeBau()  %></td>
+                    <td class="txtPlan"><%= datUseList.get(i).getKls().getKlassKurz() %></td>
                     <td class="txtPlan"><%= datUseList.get(i).getBau().getDoz().getNnameDoz() %></td>
                     <td class="txtPlan"><%= datUseList.get(i).getRaum().getRaumNr() %></td>
                     <% } catch (Exception e) {
                         } %>
                 </tr>
-                <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>              
+                <tr> <td colspan="6" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
             </table>
 

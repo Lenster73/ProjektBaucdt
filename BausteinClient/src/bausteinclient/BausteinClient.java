@@ -162,35 +162,29 @@ public class BausteinClient {
         List<String> alltxt = beanRemote.txtDatModAus(fNameDat);
 
         List<String> datum = beanRemote.addDatum(alltxt);
-       
-//        System.out.println(klname);
-//        
-//
-//        for (int i = 0; i < datum.size(); i++) {
-//            System.out.println(datum.get(i));
-//        }
-////        
-//        System.out.println(klname);
         
        System.out.println(beanRemote.addDatumBauManyDB(datum, klname));
 
-        
-        //beanRemote.addDatumBauDB(datum, klname);
+        beanRemote.addDatumBauManyDB(datum, klname);
     }
 
     public void loadBauDB() {
         BauService bauSer = new BauService();
-        String fName = "bauDoz.txt";
+        String fName = "bauDozTag.txt";
         List<String> alltxt;
-        alltxt = beanRemote.txtBauDozAus(fName);
+        alltxt = beanRemote.txtBauDozTagAus(fName);
 
         String fNameDoz = "doz.txt";
         List<String> alltxtDoz;
         alltxtDoz = beanRemote.txtDozAus(fNameDoz);
         List<Dozent> dozList = bauSer.createDozList(alltxtDoz);
 
-        Set<Baustein> bauSet = bauSer.createBauSetPlus(alltxt, dozList);
+        Set<Baustein> bauSet = bauSer.createBauSetTag(alltxt, dozList);
         Iterator<Baustein> iter = bauSet.iterator();
+        for(Baustein b: bauSet){
+            System.out.println(b.getBauid()+" | "+ b.getBauTage());
+        
+    }
 
         beanRemote.addBauDB(bauSet);
     }

@@ -132,16 +132,25 @@ table {
 .txtPlan{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    width: 13%;
+    width: 15%;
     height: 0px ;
     font-size: 15px;
+    color: #212244;
+}
+
+.txtPlan3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    width: 30%;
+    height: 5px ;
+    font-size: 14px;
     color: #212244;
 }
 
 .txtPlan2{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    width: 48%;
+    width: 45%;
     height: 5px ;
     font-size: 14px;
     color: #212244;
