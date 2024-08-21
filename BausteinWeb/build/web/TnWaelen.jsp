@@ -59,14 +59,15 @@
                         <th  >TN-Vorname:</th>
                         <th  >TN-Geb.Datum:</th>
                     </tr>
+                    <tr class="tdtab">
                     <% for (Teilnehmer t : tnList) {
-                            if (t.getTnNname().toLowerCase().contains(tnNameUse.toLowerCase())) {%>
-                    <td><%= t.getId()%></td>
-                    <td><%= t.getTnNname()%></td>
-                    <td><%= t.getTnVname()%></td>
-                    <td><%= t.getTnGeb()%></td>
-                    <td> <input type="radio" id="id" name="id" value="<%= t.getId()%>"></td> 
-                    <tr>
+                            if (t.getTnNname().toLowerCase().contains(tnNameUse.toLowerCase())& t.isIst().equalsIgnoreCase("y")) {%>
+                    <td class="tdtab2"><%= t.getId()%></td>
+                    <td class="tdtab"> <%= t.getTnNname()%></td>
+                    <td class="tdtab"><%= t.getTnVname()%></td>
+                    <td class="tdtab"><%= t.getTnGeb()%></td>
+                    <td class="tdtab2"> <input type="radio" id="id" name="id" value="<%= t.getId()%>"></td> 
+                    </tr>
                         <% }
                             }%>
 
@@ -74,7 +75,7 @@
                         <td colspan="5">
                             <button type="submit" class="btn">Löschen</button>
                         </td>
-
+                    </tr>
                 </table>
             </form>
              <% } %>

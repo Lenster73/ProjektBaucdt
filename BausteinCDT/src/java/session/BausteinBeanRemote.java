@@ -26,27 +26,41 @@ import javax.ejb.Remote;
 public interface BausteinBeanRemote {
 
     public List<Termine> datAus();
+
     public List<Klassen> getKls();
+
     public List<Baustein> getBau();
+
     public List<Teilnehmer> getTN();
-     public List<Raum> getRaum();
+
+    public List<Raum> getRaum();
+
+    public List<Dozent> getDoz();
+
     public Termine getEinBau(String datid);
+
     public void addDozent(Dozent doz);
-     public void addTnKls(String kls, String nname, String vname, String geb );
+    public void addNeueBauDB(String bauid,  String tag, String besch, String dozId);
+
+    public void addTnKls(String kls, String nname, String vname, String geb);
 //public void addTnKlsGeschl(String kl, String nname, String vname, String geb );
+
     public List<String> addDatum(List<String> alltxt);
+
     public void tnAusFileHinzu(String fname, String kls);
- public void delTn(String tnId);
+
+    public void delTn(String tnId);
 //    public void addDatumBauDB(List<String> datum, String fname);
+
     public void ersetzDatumDB(String klass, String modul, String startDat, String endeDat);
 //    public void addDatumModuleDB(String klass, String modul,String raum, String startDat, String endeDat);
-    public int addDatumModuleDBPruf(String klass, String modul,String raum, String startDat, String endeDat);
+
+    public int addDatumModuleDBPruf(String klass, String modul, String raum, String startDat, String endeDat);
+
     public String addDatumBauManyDB(List<String> datum, String fname);
 
 //    public void addDatumDB(List<Termine> datList, String fname);
-
 //    public void addBaustein(Baustein bau);
-
     public List<String> txtBauDozTagAus(String fName);
 
     public List<String> txtDozAus(String fName);
@@ -56,10 +70,12 @@ public interface BausteinBeanRemote {
     public void addBau(Set<Baustein> bauSet);
 
     public void addKl(List<Klassen> klList);
+
     public void addRaum(List<Raum> rList);
 
     public void addDoz(List<Dozent> dozList);
 
     public void addBauDB(Set<Baustein> bauSet);
+
     public List<Termine> getDatBau(String userDat);
 }

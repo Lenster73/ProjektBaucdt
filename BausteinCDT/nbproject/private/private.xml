@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/entity/Teilnehmer.java</file>
             <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/session/BausteinBean.java</file>
             <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/session/BausteinBeanRemote.java</file>
+            <file>file:/C:/EJB/BauPlanungCDT/BausteinCDT/src/java/service/BauService.java</file>
         </group>
     </open-files>
 </project-private>

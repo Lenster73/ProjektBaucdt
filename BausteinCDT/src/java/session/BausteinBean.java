@@ -498,6 +498,26 @@ public class BausteinBean implements BausteinBeanRemote {
             em.persist(bau);
         }
     }
+    
+    @Override
+    public void addNeueBauDB(String bauid,  String tag, String besch, String dozId) {
+        int tagInt= Integer.parseInt(tag);
+        Dozent doz= new Dozent();
+        int dozIdInt= Integer.parseInt(dozId);
+        if(dozIdInt >=0){
+            doz=(Dozent)em.createQuery("From Dozent Where id = '" + dozIdInt + "'").getSingleResult();
+        }  else{
+            doz=null;
+        }   
+        Baustein bau= new Baustein(bauid, besch, tagInt);
+        bau.setDoz(doz);
+//            Baustein bauSuch = em.find(Baustein.class,
+//                    bau.getBauid());
+            if (bau!= null) {
+                em.persist(bau);
+            }
+        }
+    
 
     @Override
     public void addBauDB(Set<Baustein> bauSet) {
@@ -566,6 +586,18 @@ public class BausteinBean implements BausteinBeanRemote {
             int datid = Integer.parseInt(id);
             Termine dat = (Termine) em.createQuery("From Termine Where id = '" + datid + "'").getSingleResult();
             return dat;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+     @Override
+    public List<Dozent> getDoz() {
+        try {
+            List<Dozent> dozList = em.createQuery("From Dozent").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
+            //System.out.println(rList.get(0).getId());
+            return dozList;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
