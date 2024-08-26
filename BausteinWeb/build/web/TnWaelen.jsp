@@ -34,7 +34,7 @@
                 <table class="tabKlein">
                     <tr class="txtZur">
                         <td>Geben Sie den Name ein</td>
-                        <td><input type="text" name="nname" id="nname" required></td>
+                        <td><input type="text" name="nname" id="nname" class="selGross" required></td>
                     </tr>
                     <tr>
                         <td colspan="2">

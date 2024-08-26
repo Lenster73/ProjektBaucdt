@@ -232,7 +232,7 @@ th {
 }
 td {
     width: 200px;
-    height: 60px ;
+    height: 65px ;
     padding-right: 10px;
     padding-top: 5px;
 }
@@ -275,27 +275,27 @@ td {
     border: 5px;
     border-radius: 2px;
 }
-.btn{
+/*.btn{
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     align-self:  center;
-    font-size: 16px;
+    font-size: 15px;
     color: #FFFFFF;
     background-color:  #2EAA45;
     border-color: #BAFFC2;
     padding: 5px;
     width: 100%;
     height: 100%;
-    border: 10px;
+    border: 5px;
     border-radius: 2px;
-}
+}*/
 button {
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 14px;
     color: #FFFFFF;
     background-color:  #2EAA45;
-    border-color: #BAFFC2;
+    border-color: #2EAA45;
     padding: 10px;
     width: 100%;
     height: 100%;
@@ -305,12 +305,10 @@ button {
 /* mouse over link */
 button:hover {
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 14px;
     color:#000f1d;
-    background-color:#C7EDCF;
-    border-color: #C7EDCF;
-    border: 10px;
+    background-color: #FF9900;
     border-radius: 2px;
 }
 
@@ -318,7 +316,9 @@ button:hover {
 button:active {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 15px;
-    background-color: #FF9900;
+    font-size: 14px;
+    background-color: #007ABF;
+    color: #FFFFFF;
+    
     border-radius: 2px;
 }

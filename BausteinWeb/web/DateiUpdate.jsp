@@ -60,12 +60,13 @@
 
                     /*String tnname = "tn-fi27.CSV";
                     String kls = "FI27";
-                    beanCon.invokeBean().tnAusFileHinzu(tnname, kls);*/
-
+                    beanCon.invokeBean().tnAusFileHinzu(tnname, kls);*/ 
+                    //Thread.sleep(2000);
+                   
                     response.sendRedirect("http://localhost:8080/BausteinWeb/Home.jsp");
                 } catch (Exception e) {
                     e.printStackTrace();
-                    out.print("Die Rechnung wurde schon angelegt. Wählen Sie bitte andere Datei");
+                    out.print("etwas hat schief gelaufen");
                 }
             %>
         </div>
