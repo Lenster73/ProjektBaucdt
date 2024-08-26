@@ -1,0 +1,24 @@
+Tnid;Gender;Nname;Vname;Stresse Nr;PLZ;Ort;Tel;email;GebDat;gebOrt;National;Beruf;SchulAbschl;Berator;JC-Nummer
+15234;w;Name1;Vorname1;Hauptstr., 10;90451;Nuernberg;176884523;name1@web.de;01.01.2000;Stadt-11;UA;Beruf-222;Abitur;Frau Wagner;1245-754878
+15245;m;Name2;Vorname2;Dummestr., 24;90254;Roth;172478624;name2@web.de;05.01.2001;Stadt-21;RUS;Beruf-232;Abitur;Herr Fuchs;2454-234785
+15256;m;Name3;Vorname3;Killerstr., 5;90485;Erlangen;168072725;name1@web.de;10.01.2002;Stadt-31;DE;Beruf-242;Mittlerer;Frau Lehrhard;1345-754879
+15267;w;Name4;Vorname4;Fremdestr, 87;90431;Nuernberg;163666826;name2@web.de;15.01.2003;Stadt-41;DE;Beruf-252;Hauptschul;Frau Gard;2354-234787
+15278;w;Name5;Vorname5;Hauptstr., 11;90448;Führt;159260927;name1@web.de;20.01.2004;Stadt-51;DE;Beruf-262;Fachhochschul;Frau Wagner;1245-754879
+15289;w;Name6;Vorname6;Dummestr., 25;90465;Nuernberg;154855028;name2@web.de;24.01.2005;Stadt-61;HU;Beruf-272;Abitur;Herr Fuchs;1245-754879
+15300;m;Name7;Vorname7;Killerstr., 6;90482;Nuernberg;150449129;name1@web.de;29.01.2006;Stadt-71;GR;Beruf-282;Abitur;Frau Lehrhard;2454-234786
+15311;m;Name8;Vorname8;Fremdestr, 88;90499;Nuernberg;146043230;name2@web.de;03.02.2007;Stadt-75;GE;Beruf-278;Abitur;Frau Gard;1345-754880
+15322;m;Name9;Vorname9;Hauptstr., 12;90516;Nuernberg;185234567;name1@web.de;08.02.2008;Stadt-79;ES;Beruf-274;Abitur;Frau Wagner;2354-234788
+15333;m;Name10;Vorname10;Dummestr., 26;90533;Roth;195361080;name2@web.de;12.02.2009;Stadt-83;KZ;Beruf-270;Mittlerer;Herr Fuchs;1245-754880
+15344;m;Name11;Vorname11;Killerstr., 7;90550;Erlangen;182753799;name1@web.de;17.02.2010;Stadt-73;CN;Beruf-266;Hauptschul;Frau Lehrhard;1245-754880
+15355;m;Name12;Vorname12;Fremdestr, 89;90567;Nuernberg;170146518;name2@web.de;20.06.2008;Stadt-63;LT;Beruf-262;Fachhochschul;Frau Gard;2454-234787
+15366;m;Name13;Vorname13;Hauptstr., 13;90584;Führt;157539237;name1@web.de;22.10.2006;Stadt-53;DE;Beruf-258;Abitur;Frau Wagner;1345-754881
+15377;w;Name14;Vorname14;Dummestr., 27;90601;Nuernberg;144931956;name2@web.de;22.02.2005;Stadt-43;IR;Beruf-254;Abitur;Herr Fuchs;2354-234789
+15388;w;Name15;Vorname15;Killerstr., 8;90618;Nuernberg;132324675;name1@web.de;26.06.2003;Stadt-33;SY;Beruf-250;Abitur;Frau Lehrhard;1245-754881
+15399;m;Name16;Vorname16;Fremdestr, 90;90635;Nuernberg;119717394;name2@web.de;27.10.2001;Stadt-23;SY;Beruf-246;Abitur;Frau Gard;1245-754881
+15410;w;Name17;Vorname17;Hauptstr., 14;90652;Nuernberg;176884523;name1@web.de;28.02.2000;Stadt-13;DE;Beruf-242;Mittlerer;Frau Wagner;2454-234788
+15421;m;Name18;Vorname18;Dummestr., 28;90669;Roth;172478624;name2@web.de;01.07.1998;Stadt-3;DE;Beruf-238;Hauptschul;Herr Fuchs;1345-754882
+15432;m;Name19;Vorname19;Killerstr., 9;90686;Erlangen;168072725;name1@web.de;01.11.1996;Stadt-7;KZ;Beruf-234;Fachhochschul;Frau Lehrhard;2354-234790
+15443;m;Name20;Vorname20;Fremdestr, 91;90703;Nuernberg;163666826;name2@web.de;05.03.1995;Stadt-17;RUS;Beruf-230;Abitur;Frau Gard;1245-754882
+15454;m;Name21;Vorname21;Hauptstr., 15;90720;Führt;159260927;name1@web.de;06.07.1993;Stadt-27;DE;Beruf-234;Abitur;Frau Wagner;1245-754882
+15465;m;Name22;Vorname22;Dummestr., 29;90737;Nuernberg;154855028;name2@web.de;07.11.1991;Stadt-37;RO;Beruf-238;Abitur;Herr Fuchs;2454-234789
+15476;m;Name23;Vorname23;Killerstr., 10;90754;Nuernberg;150449129;name1@web.de;10.03.1990;Stadt-47;RO;Beruf-242;Abitur;Frau Lehrhard;1345-754883

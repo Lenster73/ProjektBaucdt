@@ -45,10 +45,18 @@
             </form>
             
             <%
-                if(request.getMethod().equalsIgnoreCase("POST")){
-                tnNameUse=request.getParameter("nname");
-                //List<Teilnehmer> delTn=beanCon.invokeBean().getTN();
-                
+                if (request.getMethod().equalsIgnoreCase("POST")) {
+                        tnNameUse = request.getParameter("nname");
+                        String gibtName = "n";
+                        //List<Teilnehmer> delTn=beanCon.invokeBean().getTN();
+                        for (Teilnehmer t : tnList) {
+                            if (t.getTnNname().toLowerCase().contains(tnNameUse)) {
+                                gibtName = "y";
+                            }
+                        }
+                 if (gibtName.equalsIgnoreCase("n")){%>
+            <p class="txtZur">Wir haben kein TN mit dem Namen <%=tnNameUse %></p>    
+                <%}else{
             %>
             <p class="txtZur">Waehlen Sie bitte ein Teilnehmer: </p>
             <form action="TnLoeschen.jsp"  method="post" >
@@ -78,7 +86,7 @@
                     </tr>
                 </table>
             </form>
-             <% } %>
+             <% }} %>
             <p ><a href="Home.jsp" class="txtZur"> << Menu</a></p>
         </div>
     </body>

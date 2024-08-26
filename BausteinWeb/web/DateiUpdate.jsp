@@ -54,9 +54,13 @@
                     List<Raum> rList = bauSer.createRaum(alltxt);
                     beanCon.invokeBean().addRaum(rList);
 
-                    String tnname = "tn-fi27.CSV";
-                    String kls = "FI28";
-                    beanCon.invokeBean().tnAusFileHinzu(tnname, kls);
+                    String tnname = "tn-FI26-alles.csv";
+                    String kls = "FI26";
+                    beanCon.invokeBean().tnAllesAusFileHinzu(tnname, kls);
+
+                    /*String tnname = "tn-fi27.CSV";
+                    String kls = "FI27";
+                    beanCon.invokeBean().tnAusFileHinzu(tnname, kls);*/
 
                     response.sendRedirect("http://localhost:8080/BausteinWeb/Home.jsp");
                 } catch (Exception e) {

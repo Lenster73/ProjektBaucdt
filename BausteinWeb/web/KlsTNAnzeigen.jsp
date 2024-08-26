@@ -49,11 +49,13 @@
             <p class="zagol">Teilnehmern für die Klasse <%=klsid%></p>
             <table >
                 <tr class="txtZur">
+                    <th>TN-Nummer</th>
                     <th>Nachname</th>
                     <th>Vorname</th>
+                    <th>Tel-Nr</th>
                     <th>Geb. Datum</th>  
                 </tr>
-                 <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>
+                 <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>
                 <%
                     for (int i = 0; i < tnList.size(); i++) { 
                     int suchid=tnList.get(i).getKls().getId();
@@ -62,13 +64,15 @@
                 %>
                 <tr >        
                     <% try {%>
+                    <td class="txtPlan"><%= tnList.get(i).getId() %></td>
                     <td class="txtPlan"><%= tnList.get(i).getTnNname() %></td>
-                    <td class="txtPlan2"><%= tnList.get(i).getTnVname() %></td>
+                    <td class="txtPlan"><%= tnList.get(i).getTnVname() %></td>
+                    <td class="txtPlan">0<%=  tnList.get(i).getTnTelNr() %></td>
                     <td class="txtPlan"><%= tnList.get(i).getTnGeb() %></td>
                     <% } catch (Exception e) {
                         } %>
                 </tr>
-                <tr> <td colspan="3" class="txtPlanLine"><hr></td></tr>              
+                <tr> <td colspan="5" class="txtPlanLine"><hr></td></tr>              
                 <%}%>
                 <%} }%>    
             </table>   

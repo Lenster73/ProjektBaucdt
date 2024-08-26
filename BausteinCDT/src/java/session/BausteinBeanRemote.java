@@ -47,9 +47,12 @@ public interface BausteinBeanRemote {
 
     public List<String> addDatum(List<String> alltxt);
 
-    public void tnAusFileHinzu(String fname, String kls);
-
+//    public void tnAusFileHinzu(String fname, String kls);
+ public void tnAllesAusFileHinzu(String fname, String kls);
+ public void tnEinHinzu(String tid, String gend, String tname, String vname, String str, String plz, String ort, String tel,String tmail, String geb, String gebort, String nation, String beruf, String absch, String berat, 
+String jcnum, String klsid);
     public void delTn(String tnId);
+    public Klassen getKlsEin(String kid);
 //    public void addDatumBauDB(List<String> datum, String fname);
 
     public void ersetzDatumDB(String klass, String modul, String startDat, String endeDat);

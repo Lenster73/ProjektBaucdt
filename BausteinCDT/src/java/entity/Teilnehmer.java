@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import service.Gender;
 
 
 /**
@@ -25,26 +26,32 @@ import javax.persistence.Table;
 
 public class Teilnehmer implements Serializable {
     
-    private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-//    private String tnId;
+//    private int tnid;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    
     private String tnNname;
     private String tnVname;
-//    private String tnStrNr;
-//    private String tnPlz;
-//    private String tnOrt;
-//    private String tnTelNr;
-//    private String tnEmail;
+    
+    private String tnStrNr;
+    private String tnPlz;
+    private String tnOrt;
+    private String tnTelNr;
+    private String tnEmail;
     private String tnGeb;
+    private String tnGebort;
+    
+    private String tnNation;
+    private String tnBeruf;
+    private String tnAbschluss;
+    private String tnBerater;
+    private String tnJCNummer; 
+    
     private String ist;
-//    private String tnGebort;
-//    private String tnNation;
-//    private String tnBeruf;
-//    private String tnAbschluss;
-//    private String tnBerater;
-//    private String tnJCNummer;
    
 //    @ManyToOne 
 //    @JoinColumn(name="datid")
@@ -55,30 +62,28 @@ public class Teilnehmer implements Serializable {
     private Klassen kls;
     
     public Teilnehmer(){}
-    
-    
 
-//    public Teilnehmer(String tnId, String tnNname, String tnVname, String tnStrNr, String tnPlz, String tnOrt, String tnTelNr, String tnEmail, String tnGeb, String tnGebort, String tnNation, String tnBeruf, 
-//            String tnAbschluss, String tnBerater, String tnJCNummer, Geschlecht tnGeschlecht, Klassen kls) {
-//        this.tnId = tnId;
-//        this.tnNname = tnNname;
-//        this.tnVname = tnVname;
-//        this.tnStrNr = tnStrNr;
-//        this.tnPlz = tnPlz;
-//        this.tnOrt = tnOrt;
-//        this.tnTelNr = tnTelNr;
-//        this.tnEmail = tnEmail;
-//        this.tnGeb = tnGeb;
-//        this.tnGebort = tnGebort;
-//        this.tnNation = tnNation;
-//        this.tnBeruf = tnBeruf;
-//        this.tnAbschluss = tnAbschluss;
-//        this.tnBerater = tnBerater;
-//        this.tnJCNummer = tnJCNummer;
-//        this.tnGeschlecht = tnGeschlecht;
-//        this.kls = kls;
-//    }
-
+    public Teilnehmer(int id, Gender gender, String tnNname, String tnVname, String tnStrNr, String tnPlz, String tnOrt,
+            String tnTelNr, String tnEmail, String tnGeb, String tnGebort, String tnNation, String tnBeruf, String tnAbschluss,
+            String tnBerater, String tnJCNummer, String ist) {
+        this.id = id;
+        this.gender = gender;
+        this.tnNname = tnNname;
+        this.tnVname = tnVname;
+        this.tnStrNr = tnStrNr;
+        this.tnPlz = tnPlz;
+        this.tnOrt = tnOrt;
+        this.tnTelNr = tnTelNr;
+        this.tnEmail = tnEmail;
+        this.tnGeb = tnGeb;
+        this.tnGebort = tnGebort;
+        this.tnNation = tnNation;
+        this.tnBeruf = tnBeruf;
+        this.tnAbschluss = tnAbschluss;
+        this.tnBerater = tnBerater;
+        this.tnJCNummer = tnJCNummer;
+        this.ist = ist;
+    }
     
      public Teilnehmer(String tnNname, String tnVname, String tnGeb, String ist) {
         this.tnNname = tnNname;
@@ -100,6 +105,14 @@ public class Teilnehmer implements Serializable {
         this.id = id;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+    
     public String getTnVname() {
         return tnVname;
     }
@@ -131,17 +144,96 @@ public class Teilnehmer implements Serializable {
     public void setIst(String ist) {
         this.ist = ist;
     }
+
+    public String getTnStrNr() {
+        return tnStrNr;
+    }
+
+    public void setTnStrNr(String tnStrNr) {
+        this.tnStrNr = tnStrNr;
+    }
+
+    public String getTnPlz() {
+        return tnPlz;
+    }
+
+    public void setTnPlz(String tnPlz) {
+        this.tnPlz = tnPlz;
+    }
+
+    public String getTnOrt() {
+        return tnOrt;
+    }
+
+    public void setTnOrt(String tnOrt) {
+        this.tnOrt = tnOrt;
+    }
+
+    public String getTnTelNr() {
+        return tnTelNr;
+    }
+
+    public void setTnTelNr(String tnTelNr) {
+        this.tnTelNr = tnTelNr;
+    }
+
+    public String getTnEmail() {
+        return tnEmail;
+    }
+
+    public void setTnEmail(String tnEmail) {
+        this.tnEmail = tnEmail;
+    }
+
+    public String getTnGebort() {
+        return tnGebort;
+    }
+
+    public void setTnGebort(String tnGebort) {
+        this.tnGebort = tnGebort;
+    }
+
+    public String getTnNation() {
+        return tnNation;
+    }
+
+    public void setTnNation(String tnNation) {
+        this.tnNation = tnNation;
+    }
+
+    public String getTnBeruf() {
+        return tnBeruf;
+    }
+
+    public void setTnBeruf(String tnBeruf) {
+        this.tnBeruf = tnBeruf;
+    }
+
+    public String getTnAbschluss() {
+        return tnAbschluss;
+    }
+
+    public void setTnAbschluss(String tnAbschluss) {
+        this.tnAbschluss = tnAbschluss;
+    }
+
+    public String getTnBerater() {
+        return tnBerater;
+    }
+
+    public void setTnBerater(String tnBerater) {
+        this.tnBerater = tnBerater;
+    }
+
+    public String getTnJCNummer() {
+        return tnJCNummer;
+    }
+
+    public void setTnJCNummer(String tnJCNummer) {
+        this.tnJCNummer = tnJCNummer;
+    }
     
     
-
-//    public Termine getDat() {
-//        return dat;
-//    }
-//
-//    public void setDat(Termine dat) {
-//        this.dat = dat;
-//    }
-
 
     public Klassen getKls() {
         return kls;

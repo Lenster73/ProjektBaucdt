@@ -47,13 +47,14 @@ public class BausteinClient {
     public static void main(String[] args) throws ParseException {
 
         BausteinClient client = new BausteinClient();
-        client.loadDoz();
-        client.loadBauDB();
-        client.loadKlassen();
-        client.loadRaum();
-        client.loadDatum();
-//        client.aendernDatum();
-        client.tnHizufuegen();
+//        client.loadDoz();
+//        client.loadBauDB();
+//        client.loadKlassen();
+//        client.loadRaum();
+//        client.loadDatum();
+////        client.aendernDatum();
+//        client.tnAllesHizufuegen();
+        client.tnEinHinzu();
         //client.getDatBau();
 
 //        String dataAusF = "11.10.2023";
@@ -141,12 +142,36 @@ public class BausteinClient {
         }
 
     }
-
-    public void tnHizufuegen() {
-        String fname = "tn-fi27.CSV";
-        String kls = "FI28";
-        beanRemote.tnAusFileHinzu(fname, kls);
-
+    
+      public void tnEinHinzu() {
+        String tid = "45214";
+        String gend = "w";
+        String tname = "ddd";
+        String tvname = "ddd";
+        String tstr = "str";
+        String tplz = "14578";
+        String tort = "Stadt";
+        String ttel = "15478527";
+        String tmail = "daf@gf.tz";
+        String geb = "1985-10-08";
+        String tgebort = "dsfg";
+        String tnation = "aaa";
+        String tberuf = "sss";
+        String tabschl = "ass";
+        String tberater = "asde";
+        String jcNum = "4567824";
+        String klsid = "FI26";
+//        Klassen kl=beanRemote.getKlsEin(klsid);
+        beanRemote.tnEinHinzu(tid, gend, tname, tvname, tstr, tplz,  tort, ttel,
+               tmail, geb, tgebort, tnation, tberuf, tabschl, tberater, jcNum, klsid);
+//        System.out.println(antw);
+    }
+    
+    
+     public void tnAllesHizufuegen() {
+        String fname = "tn-FI26-alles.csv";
+        String kls = "FI26";
+        beanRemote.tnAllesAusFileHinzu(fname, kls);
     }
 
     public void loadDatum() {

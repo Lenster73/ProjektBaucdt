@@ -48,14 +48,18 @@
                     <td colspan="2"><a href="TerminBuch.jsp"> <button type="btn">Modul-Termin aendern</button></a><p></td>
                     <td colspan="2"><a href="TerminBauBuch.jsp"> <button type="btn">Modul-Termin buchen</button></a><p></td>
                 </tr>
-                
-                <tr>
+                 <tr>
                     <th colspan="6"  class="txtZur">Teilnehmern hinzufuegen oder inaktiv setzen:</th>
+                </tr> 
+               <tr>
+                    <td colspan="6"><a href="NeuTnAnlegen.jsp"><button type="btn">Neue Teilnehmer anlegen</button></a><p></td>
+                    
                 </tr>
-                <tr>
+               <tr>
                     <td colspan="2"><a href="KlassWaelenTN.jsp"><button type="btn">TN einer Klasse anzeigen</button></a><p></td>
                     <td colspan="2"><a href="TnHinzu.jsp"> <button type="btn" >TN zu einer Klasse hinzufuegen</button></a><p></td>
                     <td colspan="2"><a href="TnWaelen.jsp"> <button type="btn" >TN inaktiv setzen</button></a><p></td>
+                </tr>
             </table>
         </div>
     </body>

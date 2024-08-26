@@ -92,7 +92,7 @@ div {
 }
 .inputTXT{
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
     align-content: center; 
     width: 100%;
@@ -112,6 +112,7 @@ form {
     font-family: "Roboto", sans-serif;
     align-content: center;
 }
+
 table {
     width: 800px;
     align-content: center
@@ -120,17 +121,32 @@ table {
     width: 100%;
     height: 30px;
 }
+
+.tabKlein{
+    width: 500px;
+    align-content: center;
+}
+
+.formOneTab{
+    width: 800px;
+    align-content: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
 .txtZur{
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-weight: 700;
     text-align:  left;
     font-size: 16px;
     color: #212244;
 }
-.tabKlein{
-    width: 500px;
-    align-content: center;
+.txt14Medium{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-align:  left;
+    font-size: 15px;
+    color: #212244;
 }
 .txtBuch{
     font-family: "Roboto", sans-serif;
@@ -217,8 +233,10 @@ th {
 td {
     width: 200px;
     height: 60px ;
-    padding: 5px;
+    padding-right: 10px;
+    padding-top: 5px;
 }
+
 
 .tdtab2 {
     font-family: "Roboto", sans-serif;
@@ -227,6 +245,12 @@ td {
     color: #212244;
     width: 20%;
     height:20%;
+}
+.tdtabAnketa {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 14px; 
+    color: #212244;
 }
 
 .tdtab {
@@ -262,17 +286,17 @@ td {
     padding: 5px;
     width: 100%;
     height: 100%;
-    border: 5px;
+    border: 10px;
     border-radius: 2px;
 }
 button {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     color: #FFFFFF;
     background-color:  #2EAA45;
     border-color: #BAFFC2;
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     height: 100%;
     border: 5px;
@@ -282,11 +306,11 @@ button {
 button:hover {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     color:#000f1d;
     background-color:#C7EDCF;
     border-color: #C7EDCF;
-    border: 5px;
+    border: 10px;
     border-radius: 2px;
 }
 
@@ -294,7 +318,7 @@ button:hover {
 button:active {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     background-color: #FF9900;
     border-radius: 2px;
 }

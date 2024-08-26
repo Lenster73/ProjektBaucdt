@@ -32,6 +32,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import jdk.nashorn.internal.runtime.regexp.RegExp;
 import service.BauService;
+import service.Gender;
 
 
 /**
@@ -202,35 +203,59 @@ public class BausteinBean implements BausteinBeanRemote {
         return antw;
     }
 
-   
-
     @Override
-    public void tnAusFileHinzu(String fname, String kls) {
+    public void tnAllesAusFileHinzu(String fname, String kls) {
         List<String> alltxt = Arrays.asList();
         String fNam = fname;
         List<Teilnehmer> tnList = new ArrayList<>();
         Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + kls + "'").getSingleResult();
         try (FileReader reader = new FileReader("C://EJB//BauPlanungCDT/Datei/" + fNam); BufferedReader br = new BufferedReader(reader)) {
-            alltxt = br.lines().flatMap(line -> Stream.of(line.split(";", 4))) /*("\\s+")))*/
+            alltxt = br.lines().flatMap(line -> Stream.of(line.split(";", 16))) /*("\\s+")))*/
                     .collect(Collectors.toList());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        for (int i = 4; i <= (alltxt.size() - 4); i += 4) {
-            String nname = alltxt.get(i + 1);
-            String vname = alltxt.get(i + 2);
-            String geb = alltxt.get(i + 3);
-            Teilnehmer tn = new Teilnehmer(nname, vname, geb, "y");
+        for (int i = 16; i <= (alltxt.size() - 16); i += 16) {
+            int tnid= Integer.parseInt(alltxt.get(i));
+            String gend= alltxt.get(i + 1);
+            String nname = alltxt.get(i + 2);
+            String vname = alltxt.get(i + 3);
+            String str=alltxt.get(i + 4);
+            String plz=alltxt.get(i + 5);
+            String ort=alltxt.get(i + 6);
+            String tel=alltxt.get(i + 7);
+            String email=alltxt.get(i + 8);
+            String geb = alltxt.get(i + 9);
+            String gebort=alltxt.get(i + 10);
+            String nation=alltxt.get(i + 11);
+            String beruf=alltxt.get(i + 12);
+            String abschl=alltxt.get(i + 13);
+            String berater=alltxt.get(i + 14);
+            String jcnr=alltxt.get(i + 15);
+            Gender gendTN=Gender.WEIBLICH;
+            switch (gend) {
+                case "w":
+                   gendTN = Gender.WEIBLICH;
+                    break;
+                case "m":
+                    gendTN = Gender.MAENLICH;
+                    break;
+                case "d":
+                    gendTN = Gender.DIVERS;
+                    break;
+            }
+            Teilnehmer tn = new Teilnehmer(tnid, gendTN, nname, vname,str, plz, ort,tel, email, geb,gebort,nation, beruf, abschl, berater,jcnr, "y");
             tn.setKls(kl);
-            tnList.add(tn);
+            tnList.add(tn);            
         }
 
         for (int i = 0; i < tnList.size(); i++) {
-            Teilnehmer tn = new Teilnehmer(tnList.get(i).getTnNname(), tnList.get(i).getTnVname(), tnList.get(i).getTnGeb(),"y");
+            Teilnehmer tn = tnList.get(i);
+            int tnid=tnList.get(i).getId();
             tn.setKls(kl);
             try {
-                Teilnehmer tnSuch = em.find(Teilnehmer.class, i + 1);
+                Teilnehmer tnSuch = em.find(Teilnehmer.class, tnid );
                 if (tnSuch == null || tnSuch.getKls() != kl) {
                     em.persist(tn);
                 }
@@ -239,6 +264,90 @@ public class BausteinBean implements BausteinBeanRemote {
             }
         }
     }
+    public Klassen getKlsEin(String kid){
+       Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + kid + "'").getSingleResult();
+       return kl;
+    }
+    
+    @Override
+    public void tnEinHinzu(String tid, String gend, String tname, String vname, String str, String plz, String ort, String tel, String tmail, String geb, String gebort, String nation, String beruf, String absch, String berat,String jcnum, String klsid) {
+        Klassen kl= new Klassen();
+        if(klsid.equalsIgnoreCase("-1")){
+            kl=new Klassen();
+        } else{
+        kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + klsid + "'").getSingleResult();
+        }
+        int tnid = 0;
+        try {
+            tnid = Integer.parseInt(tid);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            
+        }
+        Gender gendTN;
+        switch (gend) {
+            case "w":
+                gendTN = Gender.WEIBLICH;
+                break;
+            case "m":
+                gendTN = Gender.MAENLICH;
+                break;
+            case "d":
+                gendTN = Gender.DIVERS;
+                break;
+            default:
+                gendTN = Gender.WEIBLICH; // or handle default case differently
+        }
+        if (tnid != 0) {
+            Teilnehmer tn = new Teilnehmer(tnid, gendTN, tname, vname, str, plz, ort,
+                    tel, tmail, geb, gebort, nation, beruf, absch, berat, jcnum, "y");
+            tn.setKls(kl);
+            try {
+                em.persist(tn);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return;
+            }
+        }
+    }
+    
+
+
+//    @Override
+//    public void tnAusFileHinzu(String fname, String kls) {
+//        List<String> alltxt = Arrays.asList();
+//        String fNam = fname;
+//        List<Teilnehmer> tnList = new ArrayList<>();
+//        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + kls + "'").getSingleResult();
+//        try (FileReader reader = new FileReader("C://EJB//BauPlanungCDT/Datei/" + fNam); BufferedReader br = new BufferedReader(reader)) {
+//            alltxt = br.lines().flatMap(line -> Stream.of(line.split(";", 4))) /*("\\s+")))*/
+//                    .collect(Collectors.toList());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (int i = 4; i <= (alltxt.size() - 4); i += 4) {
+//            String nname = alltxt.get(i + 1);
+//            String vname = alltxt.get(i + 2);
+//            String geb = alltxt.get(i + 3);
+//            Teilnehmer tn = new Teilnehmer(nname, vname, geb, "y");
+//            tn.setKls(kl);
+//            tnList.add(tn);
+//        }
+//
+//        for (int i = 0; i < tnList.size(); i++) {
+//            Teilnehmer tn = new Teilnehmer(tnList.get(i).getTnNname(), tnList.get(i).getTnVname(), tnList.get(i).getTnGeb(),"y");
+//            tn.setKls(kl);
+//            try {
+//                Teilnehmer tnSuch = em.find(Teilnehmer.class, i + 1);
+//                if (tnSuch == null || tnSuch.getKls() != kl) {
+//                    em.persist(tn);
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
     
     @Override
     public int addDatumModuleDBPruf(String klass, String modul, String raum, String startDat, String endeDat) {
