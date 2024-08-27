@@ -49,17 +49,19 @@
                    SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
 
                    Date dateUse = inputFormat.parse(geb);
-                   String tgeb = outputFormat.format(dateUse);  %>
-            <p><%=klsid %>, <%=tname %></p>
+                   String tgeb = outputFormat.format(dateUse);  %>     
            
            <% try{
                beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,  klsid);
-               %> <p class="txtBuch">Neu Teilnehmer wurde angelegt<p>
+               %> 
+               
+               <p class="txtBuch">Teilnehmer <%=tname %> <%=tvname%> wurde angelegt<p>
+                   
                <%}catch(Exception e){
                e.printStackTrace();
                }%>
             <p>
-                <a href="NeuTnAnlegen.jsp" class="txtZur"> << Zurück </a><p>
+                <a href="Home.jsp" class="txtZur"> << Zurück </a><p>
         </div>
     </body>
 </html>
