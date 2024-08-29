@@ -11,6 +11,7 @@ import entity.Klassen;
 import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
+import entity.Vertrag;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -582,7 +583,26 @@ public class BausteinBean implements BausteinBeanRemote {
         }
     }
     
-     @Override
+    @Override
+    public void addVertrag(String verNr, String kurs, String gelten, String tnNr) {
+        Vertrag vertr = new Vertrag();
+        List<Teilnehmer> tnList = em.createQuery("From Teilnehmer").getResultList();
+        Teilnehmer tn = new Teilnehmer();
+        for (int i = 0; i < tnList.size(); i++) {
+            int tnNum = tnList.get(i).getId();
+            if (tnNum == Integer.parseInt(tnNr)) {
+                tn = tnList.get(i);
+            }
+        }
+        Vertrag vertrSuch = (Vertrag) em.createQuery("From Vertrag Where vertragNr = '" + verNr + "'").getSingleResult();
+        if (vertrSuch == null) {
+            vertr = new Vertrag(verNr, kurs, gelten);
+            vertr.setTn(tn);
+            em.persist(vertr);
+        }     
+    }
+    
+    @Override
     public void addRaum(List<Raum> rList) {
         Raum raum = new Raum();
 
@@ -719,6 +739,18 @@ public class BausteinBean implements BausteinBeanRemote {
             List<Klassen> klsList = em.createQuery("From Klassen").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
             //System.out.println(rList.get(0).getId());
             return klsList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+     @Override
+    public List<Vertrag> getVertr() {
+        try {
+            List<Vertrag> verList = em.createQuery("From Vertrag").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
+            //System.out.println(rList.get(0).getId());
+            return verList;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

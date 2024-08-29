@@ -11,6 +11,7 @@ import entity.Raum;
 import entity.Teilnehmer;
 
 import entity.Termine;
+import entity.Vertrag;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,7 @@ public interface BausteinBeanRemote {
     public List<Klassen> getKls();
 
     public List<Baustein> getBau();
+    public List<Vertrag> getVertr();
 
     public List<Teilnehmer> getTN();
 
@@ -40,6 +42,7 @@ public interface BausteinBeanRemote {
     public Termine getEinBau(String datid);
 
     public void addDozent(Dozent doz);
+     public void addVertrag(String verNr, String kurs, String gelten, String tnNr);
     public void addNeueBauDB(String bauid,  String tag, String besch, String dozId);
 
     public void addTnKls(String kls, String nname, String vname, String geb);

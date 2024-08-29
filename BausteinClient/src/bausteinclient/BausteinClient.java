@@ -4,6 +4,7 @@
  */
 package bausteinclient;
 
+import org.apache.poi.xwpf.usermodel.*;
 import entity.Baustein;
 import entity.Dozent;
 import entity.Klassen;
@@ -11,6 +12,9 @@ import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -55,6 +59,7 @@ public class BausteinClient {
 ////        client.aendernDatum();
 //        client.tnAllesHizufuegen();
         client.tnEinHinzu();
+//          client.vertragWord();
         //client.getDatBau();
 
 //        String dataAusF = "11.10.2023";
@@ -106,6 +111,45 @@ public class BausteinClient {
             e.printStackTrace();
         }
     }
+    
+//    public void vertragWord(){
+//        String vertragNr ="235-7547";
+//        String inputFilePath ="C://EJB//BauPlanungCDT//Vertraege/VertragMuster.docx";
+//        String outputFilePath ="C://EJB//BauPlanungCDT//Vertraege/Vertrag-"+vertragNr+".docx";
+//        String gend ="Herr";
+//        String name ="Petrov";
+//        String vname ="Sergey";
+//        String tkurs ="FIAE";
+//        
+//        try{
+//            FileInputStream fis= new FileInputStream(inputFilePath);
+//            XWPFDocument docf=new XWPFDocument(fis);
+//            
+//            for (XWPFParagraph part : docf.getParagraphs()) { 
+//                for(XWPFRun run: part.getRuns()){
+//                   
+//                }
+//                String ptxt = part.getText();
+//                        if (ptxt != null) {
+//                            ptxt = ptxt.replace("{{vertragNr}}", vertragNr);
+//                            ptxt = ptxt.replace("{{anrede}}", gend);
+//                            ptxt = ptxt.replace("{{nachname}}", name);
+//                            ptxt = ptxt.replace("{{vorname}}", vname);
+//                            ptxt = ptxt.replace("{{kurs}}", tkurs);
+////                            txtp.setText(ptxt, 0);
+//                        }
+//                }
+//            FileOutputStream fos=new FileOutputStream(outputFilePath);
+//            docf.write(fos);
+//            fos.close();
+//            docf.close();
+//            fis.close();
+//            System.out.println("Document wurde verändert");
+//        }catch(IOException e){
+//            e.printStackTrace();
+//             System.out.println("Fehler");
+//        }
+//    }
 
     public void loadKlassen() {
         BauService bauSer = new BauService();

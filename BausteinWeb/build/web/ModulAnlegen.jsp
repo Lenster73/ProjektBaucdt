@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div ><a href="Home.jsp"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
+        <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
                 <%
                     // Initialize BeanConnector and get lists of modules and instructors
                     BeanConnector beanCon = new BeanConnector();

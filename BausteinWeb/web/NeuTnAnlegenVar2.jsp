@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div ><a href="Home.jsp"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
+        <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
                 <%
                     // Initialize BeanConnector and get lists of modules and instructors
                     BeanConnector beanCon = new BeanConnector();
@@ -45,6 +45,9 @@
                     String tberater = request.getParameter("berat");
                     String jcNum = request.getParameter("jc");
                     
+                    String vertragNr = request.getParameter("vnr");
+                    String tkurs = request.getParameter("kurs");
+                    String gelten = request.getParameter("jain");
                     String klsid = request.getParameter("kid");
                     String jain=request.getParameter("jain");
                     boolean moduleExists = false;
@@ -79,18 +82,18 @@
                     <tr>
                         <td ><label class="txt14Medium">Anrede:</label></td>
                         <td>
-                            <input type="radio" id="m" name="gend" value="m" class="inputRadioOhne"> 
+                            <input type="radio" id="m" name="gend" value="m" class="inputRadioOhne" required> 
                             <label for="m" class="labelRadio">Herr</label>
                                
                         </td >
 
                         <td >
-                            <input type="radio" id="w" name="gend" value="w" class="inputRadioOhne"> 
+                            <input type="radio" id="w" name="gend" value="w" class="inputRadioOhne" required> 
                             <label for="w" class="labelRadio">Frau</label>                          
                        </td >
                       
                         <td >
-                            <input type="radio" id="d" name="gend" value="d" class="inputRadioOhne">
+                            <input type="radio" id="d" name="gend" value="d" class="inputRadioOhne" required>
                             <label for="d" class="labelRadio">Keine</label> 
                         </td > 
                         <!--<input type="text" name="gend" id="gend" maxlength="1" title="Nur eine Buchstabe w, m oder d"  class="inputTXT" required> </td>-->
@@ -108,11 +111,9 @@
                     <tr>
                         <td colspan="8"><label for="vname" class="txt14Medium">Vorname:</label><br>
                         <input type="text" name="vname" id="vname" class="inputTXT" required></td><p>
-                    </tr>
-                    <tr>
-                        <td s colspan="8"><button type="submit" class="btnLangFuerAlle">Bestätigen</button> </td>
                     </tr>         
                 </table>
+                 <p><button type="submit" class="btnLangFuerAlle">Bestätigen</button></p>
             </form>
            
            <% } else if (moduleExists) {%>
@@ -173,7 +174,6 @@
                         <td  ><label for="beruf" class="txt14Medium">Beruf:</label><br>
                             <input type="text" name="beruf" id="beruf" class="inputTXT" ></td></p>
                     </tr>
-                    <tr> <td colspan="4" ></td></tr> 
 
                 </table> 
                 
@@ -191,18 +191,55 @@
                 <input type="hidden" name="abschl" value="<%= tabschl%>" class="inputTXT">
                 <input type="hidden" name="berat" value="<%= tberater%>" class="inputTXT">
                 <input type="hidden" name="jc" value="<%= jcNum%>" class="inputTXT"> 
-                
+                 <p><button type="submit" class="btnLangFuerAlle">Bestätigen</button></p>
+            </form>  
+             <% } else if (vertragNr==null) {%>
+             <form action="" method="post" class="formOneTab">
+                <p class="zagol">Neue Teilnehmer anlegen</p>
+                <input type="hidden" name="id" value="<%= tid%>" class="inputTXT">
+                 <input type="hidden" name="gend" value="<%= tgend%>" class="inputTXT">
+                <input type="hidden" name="name" value="<%= tname%>" class="inputTXT">
+                <input type="hidden" name="vname" value="<%= tvname%>" class="inputTXT">
+                <input type="hidden" name="str" value="<%= tstr%>" class="inputTXT">
+                <input type="hidden" name="plz" value="<%= tplz%>" class="inputTXT">
+                <input type="hidden" name="ort" value="<%= tort%>" class="inputTXT">
+
+                <input type="hidden" name="tel" value="<%= ttel%>" class="inputTXT">
+                <input type="hidden" name="email" value="<%= tmail%>" class="inputTXT">
+                <input type="hidden" name="geb" value="<%= tgeb%>" class="inputTXT">
+                <input type="hidden" name="gebort" value="<%= tgebort%>" class="inputTXT">
+                <input type="hidden" name="nat" value="<%= tnation%>" class="inputTXT">
+
+                <input type="hidden" name="beruf" value="<%= tberuf%>" class="inputTXT">
+                <input type="hidden" name="abschl" value="<%= tabschl%>" class="inputTXT">
+                <input type="hidden" name="berat" value="<%= tberater%>" class="inputTXT">
+                <input type="hidden" name="jc" value="<%= jcNum%>" class="inputTXT">
+                <table class="tableAnketa">
+                    <tr> 
+                        <th colspan="4"><p class="txtZur">Für Teilnehmer Nr <%= tid%> <%= tname%> <%= tvname%> geben Sie bitte Vertragsdaten ein:</p> </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"  ><label for="vnr" class="txt14Medium">Vertragsnummer:</label><br>
+                        <input type="text" name="vnr" id="vnr" class="inputTXT" required ></td><p>
+                    <td  colspan="2" ><label for="kurs" class="txt14Medium">Lehrgang (Kurs):</label><br>
+                        <input type="text"  name="kurs" id="kurs" class="inputTXT" required ></td></p>
+                    </tr>
+                     <tr><td colspan="4"></td></tr>
+                </table>
+                <input type="hidden" name="vnr" value="<%= vertragNr%>" class="inputTXT">
+                <input type="hidden" name="kurs" value="<%= tkurs%>" class="inputTXT">
+                    
                 <label class="txtZur">Wissen Sie schon, in welchem Klasse wird den Teilnehmer?</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="radio" id="y" name="jain" value="y" class="inputRadioOhne"> 
+                  <input type="radio" id="y" name="jain" value="y" class="inputRadioOhne" required> 
                             <label for="y" class="labelRadio">Ja</label>&nbsp;&nbsp;
-                            <input type="radio" id="n" name="jain" value="n" class="inputRadioOhne"> 
+                            <input type="radio" id="n" name="jain" value="n" class="inputRadioOhne" required> 
                             <label for="n" class="labelRadio">Nein</label>     
                 <p><button type="submit" class="btnLangFuerAlle">Bestätigen</button></p>
             </form>
 
             <% } else if ("y".equalsIgnoreCase(jain)) {%>
             <!-- Step 3: Select a Dozent -->
-            <form action="NeuTnUpload.jsp" method="post">
+            <form action="NeuTnUploadVar2.jsp" method="post">
                 <p class="zagol">Neue Teilnehmer anlegen</p>
                 <p class=txtBuch">Wählen Sie ein Klass:</p> 
                 <div>
@@ -213,7 +250,6 @@
                 <input type="hidden" name="gend" value="<%= tgend%>" class="inputTXT">
                 <input type="hidden" name="name" value="<%= tname%>" class="inputTXT">
                 <input type="hidden" name="vname" value="<%= tvname%>" class="inputTXT">
-
                 
                 <input type="hidden" name="str" value="<%= tstr%>" class="inputTXT">
                 <input type="hidden" name="plz" value="<%= tplz%>" class="inputTXT">
@@ -230,6 +266,10 @@
                 <input type="hidden" name="berat" value="<%= tberater%>" class="inputTXT">
                 <input type="hidden" name="jc" value="<%= jcNum%>" class="inputTXT">
                 <input type="hidden" name="kid" value="<%= klsid%>" class="inputTXT">
+                
+                <input type="hidden" name="vnr" value="<%= vertragNr%>" class="inputTXT">
+                <input type="hidden" name="kurs" value="<%= tkurs%>" class="inputTXT">
+                <input type="hidden" name="jain" value="<%= gelten%>" class="inputTXT">
             </div>
                 <button type="submit" class="btnLangFuerAlle">Anlegen</button>
                 
@@ -237,7 +277,7 @@
 
             <% } else { %>
             <!-- Final Step: Submit without selecting a Dozent -->
-            <form action="NeuTnUpload.jsp" method="post" >
+            <form action="NeuTnUploadVar2.jsp" method="post" >
              
                 <p class="zagol">Neue Teilnehmer anlegen</p>
                 <input type="hidden" name="id" value="<%= tid%>" class="inputTXT">
@@ -261,6 +301,9 @@
                 <input type="hidden" name="berat" value="<%= tberater%>" class="inputTXT">
                 <input type="hidden" name="jc" value="<%= jcNum%>" class="inputTXT">
                 <input type="hidden" name="kid" value="-1" class="inputTXT">
+                <input type="hidden" name="vnr" value="<%= vertragNr%>" class="inputTXT">
+                <input type="hidden" name="kurs" value="<%= tkurs%>" class="inputTXT">
+                <input type="hidden" name="jain" value="<%= gelten%>" class="inputTXT">
                 <p class=txtZur">Teilnehmer Nr <%= tid %>: <%=tname%>, <%= tvname%> wird ohne Klasse angelegt.</p>
                 
                 <button type="submit" class="btnLangFuerAlle">Anlegen</button>

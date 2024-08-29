@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div ><a href="Home.jsp"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
+        <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
                 <%
                     BeanConnector beanCon = new BeanConnector();
                     Klassen kls = new Klassen();
