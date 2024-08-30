@@ -11,7 +11,7 @@ import entity.Klassen;
 import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
-import entity.Vertrag;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -72,6 +72,22 @@ public class BausteinBean implements BausteinBeanRemote {
             tn.setKls(kls);
             if(tn!= null){
             em.persist(tn);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+      
+      @Override
+      public void addTnZuKls(String kls, String tnid ) {
+        try {
+            Klassen klass=(Klassen) em.createQuery("From Klassen Where klassKurz = '" + kls + "'").getSingleResult();
+            String ist="y";
+            Teilnehmer tn= (Teilnehmer) em.createQuery("From Teilnehmer Where id = '" + tnid + "'").getSingleResult();
+            tn.setKls(klass);
+            
+            if(tn!= null){
+            em.merge(tn);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -234,6 +250,8 @@ public class BausteinBean implements BausteinBeanRemote {
             String abschl=alltxt.get(i + 13);
             String berater=alltxt.get(i + 14);
             String jcnr=alltxt.get(i + 15);
+            String vernr="";
+            String kurs="";
             Gender gendTN=Gender.WEIBLICH;
             switch (gend) {
                 case "w":
@@ -246,7 +264,7 @@ public class BausteinBean implements BausteinBeanRemote {
                     gendTN = Gender.DIVERS;
                     break;
             }
-            Teilnehmer tn = new Teilnehmer(tnid, gendTN, nname, vname,str, plz, ort,tel, email, geb,gebort,nation, beruf, abschl, berater,jcnr, "y");
+            Teilnehmer tn = new Teilnehmer(tnid, gendTN, nname, vname,str, plz, ort,tel, email, geb,gebort,nation, beruf, abschl, berater,jcnr,vernr, kurs, "y");
             tn.setKls(kl);
             tnList.add(tn);            
         }
@@ -265,13 +283,15 @@ public class BausteinBean implements BausteinBeanRemote {
             }
         }
     }
+    @Override
     public Klassen getKlsEin(String kid){
        Klassen kl = (Klassen) em.createQuery("From Klassen Where klassKurz = '" + kid + "'").getSingleResult();
        return kl;
     }
     
     @Override
-    public void tnEinHinzu(String tid, String gend, String tname, String vname, String str, String plz, String ort, String tel, String tmail, String geb, String gebort, String nation, String beruf, String absch, String berat,String jcnum, String klsid) {
+    public void tnEinHinzu(String tid, String gend, String tname, String vname, String str, String plz, String ort,
+            String tel, String tmail, String geb, String gebort, String nation, String beruf, String absch, String berat,String jcnum, String vernr, String kurs, String klsid) {
         Klassen kl= new Klassen();
         if(klsid.equalsIgnoreCase("-1")){
             kl=new Klassen();
@@ -301,7 +321,7 @@ public class BausteinBean implements BausteinBeanRemote {
         }
         if (tnid != 0) {
             Teilnehmer tn = new Teilnehmer(tnid, gendTN, tname, vname, str, plz, ort,
-                    tel, tmail, geb, gebort, nation, beruf, absch, berat, jcnum, "y");
+                    tel, tmail, geb, gebort, nation, beruf, absch, berat, jcnum,vernr,kurs, "y");
             tn.setKls(kl);
             try {
                 em.persist(tn);
@@ -583,24 +603,6 @@ public class BausteinBean implements BausteinBeanRemote {
         }
     }
     
-    @Override
-    public void addVertrag(String verNr, String kurs, String gelten, String tnNr) {
-        Vertrag vertr = new Vertrag();
-        List<Teilnehmer> tnList = em.createQuery("From Teilnehmer").getResultList();
-        Teilnehmer tn = new Teilnehmer();
-        for (int i = 0; i < tnList.size(); i++) {
-            int tnNum = tnList.get(i).getId();
-            if (tnNum == Integer.parseInt(tnNr)) {
-                tn = tnList.get(i);
-            }
-        }
-        Vertrag vertrSuch = (Vertrag) em.createQuery("From Vertrag Where vertragNr = '" + verNr + "'").getSingleResult();
-        if (vertrSuch == null) {
-            vertr = new Vertrag(verNr, kurs, gelten);
-            vertr.setTn(tn);
-            em.persist(vertr);
-        }     
-    }
     
     @Override
     public void addRaum(List<Raum> rList) {
@@ -745,17 +747,7 @@ public class BausteinBean implements BausteinBeanRemote {
         }
     }
     
-     @Override
-    public List<Vertrag> getVertr() {
-        try {
-            List<Vertrag> verList = em.createQuery("From Vertrag").getResultList(); //Teilnehemr ist Name von Klasse, nicht von Table
-            //System.out.println(rList.get(0).getId());
-            return verList;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+    
     
      @Override
     public List<Raum> getRaum() {

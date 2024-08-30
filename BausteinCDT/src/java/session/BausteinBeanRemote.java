@@ -11,7 +11,6 @@ import entity.Raum;
 import entity.Teilnehmer;
 
 import entity.Termine;
-import entity.Vertrag;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +30,6 @@ public interface BausteinBeanRemote {
     public List<Klassen> getKls();
 
     public List<Baustein> getBau();
-    public List<Vertrag> getVertr();
 
     public List<Teilnehmer> getTN();
 
@@ -42,10 +40,11 @@ public interface BausteinBeanRemote {
     public Termine getEinBau(String datid);
 
     public void addDozent(Dozent doz);
-     public void addVertrag(String verNr, String kurs, String gelten, String tnNr);
+    
     public void addNeueBauDB(String bauid,  String tag, String besch, String dozId);
 
     public void addTnKls(String kls, String nname, String vname, String geb);
+    public void addTnZuKls(String kls, String tnid );
 //public void addTnKlsGeschl(String kl, String nname, String vname, String geb );
 
     public List<String> addDatum(List<String> alltxt);
@@ -53,7 +52,7 @@ public interface BausteinBeanRemote {
 //    public void tnAusFileHinzu(String fname, String kls);
  public void tnAllesAusFileHinzu(String fname, String kls);
  public void tnEinHinzu(String tid, String gend, String tname, String vname, String str, String plz, String ort, String tel,String tmail, String geb, String gebort, String nation, String beruf, String absch, String berat, 
-String jcnum, String klsid);
+String jcnum,String vernr, String kurs, String klsid);
     public void delTn(String tnId);
     public Klassen getKlsEin(String kid);
 //    public void addDatumBauDB(List<String> datum, String fname);

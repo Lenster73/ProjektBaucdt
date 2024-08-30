@@ -11,6 +11,7 @@ import entity.Klassen;
 import entity.Raum;
 import entity.Teilnehmer;
 import entity.Termine;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -56,9 +57,12 @@ public class BausteinClient {
 //        client.loadKlassen();
 //        client.loadRaum();
 //        client.loadDatum();
-////        client.aendernDatum();
 //        client.tnAllesHizufuegen();
-        client.tnEinHinzu();
+        
+        
+//        client.tnEinHinzu();
+      
+//        client.aendernDatum();
 //          client.vertragWord();
         //client.getDatBau();
 
@@ -150,6 +154,8 @@ public class BausteinClient {
 //             System.out.println("Fehler");
 //        }
 //    }
+    
+    
 
     public void loadKlassen() {
         BauService bauSer = new BauService();
@@ -205,9 +211,11 @@ public class BausteinClient {
         String tberater = "asde";
         String jcNum = "4567824";
         String klsid = "FI26";
+        String vernr = "1547-8547";
+        String kurs = "FISI";
 //        Klassen kl=beanRemote.getKlsEin(klsid);
         beanRemote.tnEinHinzu(tid, gend, tname, tvname, tstr, tplz,  tort, ttel,
-               tmail, geb, tgebort, tnation, tberuf, tabschl, tberater, jcNum, klsid);
+               tmail, geb, tgebort, tnation, tberuf, tabschl, tberater, jcNum, vernr, kurs, klsid);
 //        System.out.println(antw);
     }
     

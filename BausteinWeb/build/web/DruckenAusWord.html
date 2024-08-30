@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word-Datei auswählen und drucken</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
+    <div class="tabKlein">
+         <p class="zagol">Ein Vertrag in Word-Format drucken</p><br>
+    <label class="txtZur">Wählen Sie ein Vertrag:</label><p>
+       
+    
+    <input type="file" id="fileInput" accept=".docx" class="dateiGross"><p>
+    <button onclick="printFile()" class="btnOneTab">Drucken</button>
+
+    <iframe id="printFrame" style="display:none;"></iframe>
+
+    <script>
+        function printFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const arrayBuffer = event.target.result;
+                    mammoth.convertToHtml({arrayBuffer: arrayBuffer})
+                        .then(displayResult)
+                        .catch(handleError);
+                };
+
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert("Bitte wählen Sie eine Datei aus.");
+            }
+        }
+
+        function displayResult(result) {
+            const printFrame = document.getElementById('printFrame');
+            printFrame.srcdoc = result.value;
+            printFrame.onload = function() {
+                printFrame.contentWindow.print();
+            };
+        }
+
+        function handleError(err) {
+            console.error("Fehler bei der Verarbeitung der Datei: ", err);
+            alert("Fehler beim Lesen der Word-Datei.");
+        }
+    </script>
+    </div>
+</body>
+</html>
+

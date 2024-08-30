@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datei auswählen und drucken</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
+     <div class="tabKlein">
+         <p class="zagol">Datei auswählen und drucken</p><br>
+    <label class="txtZur">Wählen Sie ein Vertrag:</label><p>
+    <input type="file" id="fileInput" class="dateiGross"><p>
+    <button onclick="printFile()" class="btnOneTab">Drucken</button>
+
+    <iframe id="printFrame" class="txtZur" style="display:none; "></iframe>
+
+    <script>
+        function printFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const printFrame = document.getElementById('printFrame');
+                    printFrame.srcdoc = event.target.result;
+                    printFrame.onload = function() {
+                        printFrame.contentWindow.print();
+                    };
+                };
+
+                reader.readAsText(file);
+            } else {
+                alert("Bitte wählen Sie eine Datei aus.");
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>
+

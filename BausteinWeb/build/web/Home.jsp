@@ -24,7 +24,7 @@
             <p class="zagol">Vor Nutzung der Anwendung bitte regelmäßig alle Datenquellen aktualisieren!</p>
             <table>
                 <tr>
-                    <th colspan="3" class="txtZur">Datei UPLOAD/UPDATE:</th>  
+                    <th colspan="3" class="txtZur">Quelldateien Altsystem -- Datei UPLOAD/UPDATE:</th>  
                     
                 </tr>
                 <tr >

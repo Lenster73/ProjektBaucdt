@@ -137,25 +137,7 @@ public class Baustein implements Serializable {
                 && Objects.equals(bauBeschr, bau.bauBeschr);
     }
 
-//    @Override
-//    public int hashCode() {
-//        int hash = 0;
-//        hash += (bauid != null ? bauid.hashCode() : 0);
-//        return hash;
-//    }
-//
-//    @Override
-//    public boolean equals(Object object) {
-//        // TODO: Warning - this method won't work in the case the id fields are not set
-//        if (!(object instanceof Baustein)) {
-//            return false;
-//        }
-//        Baustein other = (Baustein) object;
-//        if ((this.bauid == null && other.bauid != null) || (this.bauid != null && !this.bauid.equals(other.bauid))) {
-//            return false;
-//        }
-//        return true;
-//    }
+
     @Override
     public String toString() {
         return "Baustein{" + "bauid=" + bauid + ", bauBeschr=" + bauBeschr + '}';

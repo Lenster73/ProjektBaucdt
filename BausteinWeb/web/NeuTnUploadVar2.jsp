@@ -20,7 +20,6 @@
         
           <div>
             <%
-           
                 BeanConnector beanCon = new BeanConnector();
                     // Retrieve parameters from the request
                     String tid = request.getParameter("id");
@@ -42,8 +41,7 @@
                     
                     String vertragNr = request.getParameter("vnr");
                     String tkurs = request.getParameter("kurs");
-                    String gelten = request.getParameter("gilt");
-                    
+
                     String klsid = request.getParameter("kid"); 
                    SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
                    SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -52,25 +50,19 @@
                    String tgeb = outputFormat.format(dateUse);  %>     
     
                    
-           <% try{
-              beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,  klsid);
-           %> 
+            <% try{
+               beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,vertragNr,tkurs,  klsid);
+               %> 
+               
                <p class="txtBuch">Teilnehmer <%=tname %> <%=tvname%> wurde angelegt<p>
                    
                <%}catch(Exception e){
                e.printStackTrace();
                }%>
-               
-               
-               <% try{
-                    beanCon.invokeBean().addVertrag(vertragNr, tkurs, gelten, tid); 
-                   %>
-                    <p class="txtBuch">Vertrag <%=vertragNr %>  wurde angelegt<p>
-                    <%}catch(Exception e){
-               e.printStackTrace();
-               }%>
-            <p>
-                <a href="Home.jsp" class="txtZur"> << Zurück </a><p>
+             
+              
+              
+            <p><a href="Home.jsp" class="txtZur"> << Zurück </a></p>
         </div>
     </body>
 </html>

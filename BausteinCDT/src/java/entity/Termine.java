@@ -57,18 +57,6 @@ public class Termine implements Serializable {
     @JoinColumn(name = "rid")
     private Raum raum;
 
-//    @OneToMany(mappedBy = "dat")
-//    private List<Teilnehmer> tnList = new ArrayList<>();
-
-//    @ManyToMany
-//    @JoinTable(
-//            joinColumns
-//            = @JoinColumn(name = "111",
-//                    referencedColumnName = "id"),
-//            inverseJoinColumns
-//            = @JoinColumn(name = "222",
-//                    referencedColumnName = "bauid"))
-//    private List<Baustein> bauList = new ArrayList();
     public Termine() {
     }
 
@@ -103,15 +91,6 @@ public class Termine implements Serializable {
         this.raum = raum;
     }
 
-
-//    public String getKlskurz() {
-//        return klskurz;
-//    }
-//
-//    public void setKlskurz(String klskurz) {
-//        this.klskurz = klskurz;
-//    }
-
     public String getStartBau() {
         return startBau;
     }
@@ -135,14 +114,6 @@ public class Termine implements Serializable {
     public void setBau(Baustein bau) {
         this.bau = bau;
     }
-
-//    public List<Teilnehmer> getTnList() {
-//        return tnList;
-//    }
-//
-//    public void setTnList(List<Teilnehmer> tnList) {
-//        this.tnList = tnList;
-//    }
 
     @Override
     public int hashCode() {

@@ -52,7 +52,7 @@
                    String tgeb = outputFormat.format(dateUse);  %>     
            
            <% try{
-               beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,  klsid);
+               beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,"","",  klsid);
                %> 
                
                <p class="txtBuch">Teilnehmer <%=tname %> <%=tvname%> wurde angelegt<p>

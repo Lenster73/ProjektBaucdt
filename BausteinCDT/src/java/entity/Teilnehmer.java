@@ -5,6 +5,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import service.Gender;
 
@@ -50,7 +53,8 @@ public class Teilnehmer implements Serializable {
     private String tnAbschluss;
     private String tnBerater;
     private String tnJCNummer; 
-    
+    private String verNr;
+    private String kurs;
     private String ist;
    
 //    @ManyToOne 
@@ -61,11 +65,12 @@ public class Teilnehmer implements Serializable {
     @JoinColumn(name="klid")
     private Klassen kls;
     
+//    @OneToMany(mappedBy = "tn")
+//    private List<Vertrag> verList = new ArrayList<>();
+    
     public Teilnehmer(){}
 
-    public Teilnehmer(int id, Gender gender, String tnNname, String tnVname, String tnStrNr, String tnPlz, String tnOrt,
-            String tnTelNr, String tnEmail, String tnGeb, String tnGebort, String tnNation, String tnBeruf, String tnAbschluss,
-            String tnBerater, String tnJCNummer, String ist) {
+    public Teilnehmer(int id, Gender gender, String tnNname, String tnVname, String tnStrNr, String tnPlz, String tnOrt, String tnTelNr, String tnEmail, String tnGeb, String tnGebort, String tnNation, String tnBeruf, String tnAbschluss, String tnBerater, String tnJCNummer, String verNr, String kurs, String ist) {
         this.id = id;
         this.gender = gender;
         this.tnNname = tnNname;
@@ -82,8 +87,12 @@ public class Teilnehmer implements Serializable {
         this.tnAbschluss = tnAbschluss;
         this.tnBerater = tnBerater;
         this.tnJCNummer = tnJCNummer;
+        this.verNr = verNr;
+        this.kurs = kurs;
         this.ist = ist;
     }
+    
+    
     
      public Teilnehmer(String tnNname, String tnVname, String tnGeb, String ist) {
         this.tnNname = tnNname;
@@ -152,6 +161,24 @@ public class Teilnehmer implements Serializable {
     public void setTnStrNr(String tnStrNr) {
         this.tnStrNr = tnStrNr;
     }
+
+    public String getVerNr() {
+        return verNr;
+    }
+
+    public void setVerNr(String verNr) {
+        this.verNr = verNr;
+    }
+
+    public String getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(String kurs) {
+        this.kurs = kurs;
+    }
+    
+    
 
     public String getTnPlz() {
         return tnPlz;
@@ -232,7 +259,15 @@ public class Teilnehmer implements Serializable {
     public void setTnJCNummer(String tnJCNummer) {
         this.tnJCNummer = tnJCNummer;
     }
-    
+
+//    public List<Vertrag> getVerList() {
+//        return verList;
+//    }
+//
+//    public void setVerList(List<Vertrag> verList) {
+//        this.verList = verList;
+//    }
+//    
     
 
     public Klassen getKls() {
