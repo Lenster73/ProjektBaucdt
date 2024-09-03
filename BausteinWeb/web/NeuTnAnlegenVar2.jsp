@@ -75,7 +75,7 @@
                 <table class="tableAnketa">
                     <tr>
                         <td colspan="2"><label for="id" class="txt14Medium">TN-Nummer (5 Ziffern):</label> <br>
-                            <input type="number" min="10000" max="99999" title="Nur 5 Ziffern" name="id" id="id" class="inputTXT" required> </td>
+                            <input type="number" min="10000" max="99999" title="Nur 5 Ziffern" name="id" id="id" class="inputTXT" required><p> </td>
                     </tr>
                     
                     <tr>
@@ -95,12 +95,11 @@
                             <input type="radio" id="d" name="gend" value="d" class="inputRadioOhne" required>
                             <label for="d" class="labelRadio">Keine</label> 
                         </td > 
-                        <!--<input type="text" name="gend" id="gend" maxlength="1" title="Nur eine Buchstabe w, m oder d"  class="inputTXT" required> </td>-->
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                    
+                    <p>
                     </tr>
                     
                     <tr>
@@ -153,7 +152,7 @@
                      
                     <tr>
                         <td><label for="geb" class="txt14Medium">Geb.Datum:</label><br>
-                        <input type="date" name="geb" id="geb" class="inputTXT" required ></td><p>
+                        <input type="date" max="2006-01-01" name="geb" id="geb" value="2006-01-01" class="inputTXT" required ></td><p>
                     <td ><label for="gebort" class="txt14Medium">Geb.Ort:</label><br>
                         <input type="text" name="gebort" id="gebort" class="inputTXT" required ></td></p>
                     <td  colspan="2"><label for="nat" class="txt14Medium">Nationalitaet:</label><br>
