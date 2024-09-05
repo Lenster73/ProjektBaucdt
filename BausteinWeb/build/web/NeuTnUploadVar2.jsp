@@ -55,12 +55,21 @@
                %> 
                
                <p class="txtBuch">Teilnehmer <%=tname%> <%=tvname%> wurde angelegt<p>
+<<<<<<< HEAD
                
                    <label><a href="DruckenAusWord.html"><button class="btnLangFuerAlle">Einen Vertrag drucken</button></a>  </label ><br>
                <p>
                
                    <label><a href="Home.jsp"><button class="btnLangFuerAlle"> Erweiterte Funktionen + Zusatzfunktionen</button></a>  </label >
                   
+=======
+               <div  class="btnTopPosition"> 
+                   <label><a href="DruckenAusWord.html"><button class="btnLangFuerAlle">Einen Vertrag drucken</button></a>  </label ><br>
+               </div>
+               <div  class="btnTopPosition"> 
+                   <label><a href="Home.jsp"><button class="btnLangFuerAlle"> Erweiterte Funktionen + Zusatzfunktionen</button></a>  </label >
+               </div>    
+>>>>>>> 231a7fa033706fa9bf153b2ef1f8c8ddf8678c7a
                <%} catch (Exception e) {
                        e.printStackTrace();
                    }%>

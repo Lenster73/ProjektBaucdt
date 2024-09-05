@@ -360,7 +360,11 @@ table {
 td {
     width: 200px;
     height: 65px ;
+<<<<<<< HEAD
     padding: 5px 5px 5px 5px;
+=======
+    padding: 5px 10px 5px 5px;
+>>>>>>> 231a7fa033706fa9bf153b2ef1f8c8ddf8678c7a
 }
 
 
