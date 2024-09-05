@@ -39,7 +39,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button type="submit" class="btn">Wählen</button>
+                            <button type="submit" >Wählen</button>
                         </td>
                     </tr>
                 </table>
@@ -79,7 +79,6 @@
                      
                     </tr>
                    <%}}%>
-                    <tr><td colspan="5"></td></tr>
                    
                       <tr>
                           <th colspan="2"  class="txtZur">Waehlen Sie bitte eine Klasse: <br>
@@ -105,7 +104,7 @@
                     </tr> 
                      <tr>
                         <td colspan="5">
-                            <button type="submit" class="btn">Hinzufuegen</button>
+                            <button type="submit" >Hinzufuegen</button>
                         </td>
                     </tr>
                 </table>

@@ -19,7 +19,7 @@
     </head>
     <body>
         <div ><a href="index.html"><img src="CDT-Logo.png" alt="Logo CDT" class="logo"></a></div>
-        <div>
+         <div>
             
             <p class="zagol">Vor Nutzung der Anwendung bitte regelmäßig alle Datenquellen aktualisieren!</p>
             <table>
@@ -28,39 +28,40 @@
                     
                 </tr>
                 <tr >
-                    <td  colspan="3"><a href="DateiUpdate.jsp"> <button type="btn" >Dateien aktualisieren</button></a><p></td>
+                    <td  colspan="3"><a href="DateiUpdate.jsp"> <button >Dateien aktualisieren</button></a><p></td>
                    
-                    <td colspan="3" ><a href="DateiWaelen.jsp"> <button type="btn" >Alten Plan waehlen und hochladen</button></a><p></td>
+                    <td colspan="3" ><a href="DateiWaelen.jsp"> <button >Alten Plan waehlen und hochladen</button></a><p></td>
                 </tr>
                <tr>
                     <th colspan="6"  class="txtZur">Module:</th>
                 </tr>
                 <tr>
-                    <td colspan="2"><a href="DozBauAnzeigen.jsp"><button type="btn">Alle Module anzeigen</button></a><p></td>                 
-                    <td colspan="2"><a href="DatumWaelen.jsp"> <button type="btn">Module fuer einen Stichtag anzeigen</button></a><p></td>
-                    <td colspan="2"><a href="ModulAnlegen.jsp"> <button type="btn">Neue Module anlegen</button></a><p></td>
+                    <td colspan="2"><a href="DozBauAnzeigen.jsp"><button >Alle Module anzeigen</button></a><p></td>                 
+                    <td colspan="2"><a href="DatumWaelen.jsp"> <button >Module fuer einen Stichtag anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="ModulAnlegen.jsp"> <button>Neue Module anlegen</button></a><p></td>
                 </tr>
                 <tr>                    
                     <th colspan="6"  class="txtZur">Klassen anzeigen oder bearbeiten:</th>                   
                 </tr>
                 <tr>
-                    <td colspan="2"><a href="KlassWaelen.jsp"><button type="btn" >Plan für eine Klasse anzeigen</button></a><p></td>
-                    <td colspan="2"><a href="TerminBuch.jsp"> <button type="btn">Modul-Termin aendern</button></a><p></td>
-                    <td colspan="2"><a href="TerminBauBuch.jsp"> <button type="btn">Modul-Termin buchen</button></a><p></td>
+                    <td colspan="2"><a href="KlassWaelen.jsp"><button >Plan für eine Klasse anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="TerminBuch.jsp"> <button >Modul-Termin aendern</button></a><p></td>
+                    <td colspan="2"><a href="TerminBauBuch.jsp"> <button >Modul-Termin buchen</button></a><p></td>
                 </tr>
                  <tr>
                     <th colspan="6"  class="txtZur">Teilnehmern hinzufuegen oder inaktiv setzen:</th>
                 </tr> 
                <tr>
-                    <td colspan="6"><a href="NeuTnAnlegen.jsp"><button type="btn">Neue Teilnehmer anlegen</button></a><p></td>
-                    
+                    <td colspan="3"><a href="NeuTnAnlegenVar2.jsp"><button>Neue Teilnehmer anlegen</button></a></td>
+                     <td colspan="3"><a  href="DruckenAusWord.html"><button >Einen Vertrag drucken</button></a></td>
                 </tr>
                <tr>
-                    <td colspan="2"><a href="KlassWaelenTN.jsp"><button type="btn">TN einer Klasse anzeigen</button></a><p></td>
-                    <td colspan="2"><a href="TnHinzu.jsp"> <button type="btn" >TN zu einer Klasse hinzufuegen</button></a><p></td>
-                    <td colspan="2"><a href="TnWaelen.jsp"> <button type="btn" >TN inaktiv setzen</button></a><p></td>
+                    <td colspan="2"><a href="KlassWaelenTN.jsp"><button >TN einer Klasse anzeigen</button></a><p></td>
+                    <td colspan="2"><a href="TnHinzu.jsp"> <button >TN zu einer Klasse hinzufuegen</button></a><p></td>
+                    <td colspan="2"><a href="TnWaelen.jsp"> <button >TN inaktiv setzen</button></a><p></td>
                 </tr>
             </table>
         </div>
+      
     </body>
 </html>

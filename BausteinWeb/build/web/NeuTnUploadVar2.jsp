@@ -54,14 +54,17 @@
                beanCon.invokeBean().tnEinHinzu(tid, tgend, tname,tvname, tstr, tplz, tort, ttel, tmail, tgeb, tgebort, tnation, tberuf, tabschl, tberater, jcNum,vertragNr,tkurs,  klsid);
                %> 
                
-               <p class="txtBuch">Teilnehmer <%=tname %> <%=tvname%> wurde angelegt<p>
-                   
-               <%}catch(Exception e){
-               e.printStackTrace();
-               }%>
-             
-              
-              
+               <p class="txtBuch">Teilnehmer <%=tname%> <%=tvname%> wurde angelegt<p>
+               
+                   <label><a href="DruckenAusWord.html"><button class="btnLangFuerAlle">Einen Vertrag drucken</button></a>  </label ><br>
+               <p>
+               
+                   <label><a href="Home.jsp"><button class="btnLangFuerAlle"> Erweiterte Funktionen + Zusatzfunktionen</button></a>  </label >
+                  
+               <%} catch (Exception e) {
+                       e.printStackTrace();
+                   }%>
+
             <p><a href="Home.jsp" class="txtZur"> << Zurück </a></p>
         </div>
     </body>
